@@ -1,0 +1,162 @@
+.maintitle {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border: solid 6px rgb(255, 255, 255);
+    border-top-width: 7px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #c2dcff;
+    border-left-color: rgb(0, 188, 245);
+    background-image: linear-gradient(to right, rgb(157, 227, 248)-60%, rgb(255, 255, 255)40%);
+
+    height: 50px;
+    font: 500 200% Tahoma, Geneva, sans-serif;
+    text-indent: -50%;
+    text-align: center;
+    text-shadow: 0px 0px 0px rgb(29, 68, 87);
+    letter-spacing: 20px;
+    line-height: 50px;
+
+    transition-property: box-shadow, height, font, text-indent, text-shadow, letter-spacing, border-radius, background-image;
+    transition-duration: 0.8s, 0.5s, 0.5s, 0.8s, 0.5s, 0.5s, 0.5s, 0.5s, 0.8s;
+    transition-timing-function: ease;
+}
+
+.maintitle:hover {
+    box-shadow: 1px 2px 7px #4e9afd;
+    border-radius: 40px;
+    height: 70px;
+
+    font: 540 255% Tahoma, Geneva, sans-serif;
+    text-indent: 00%;
+    text-shadow: 2px 1px 2px rgb(49, 99, 124);
+    letter-spacing: 30px;
+    line-height: 70px;
+
+    background-image: linear-gradient(to right, rgb(71, 210, 252)-100%, rgb(255, 255, 255)70%);
+}
+
+.content101 {
+    height: 100px;
+    box-shadow: 1px 2px 7px #c2dcff;
+    border-radius: 2px;
+    font: 500 100% Tahoma, Geneva, sans-serif;
+    letter-spacing: 1px;
+    line-height: 100%;
+
+    position: relative;
+    transition-property: box-shadow, border-radius, font;
+    transition-duration: 0.2s, 0.2s, 0.2s;
+}
+
+.content101:hover {
+    border-radius: 15px;
+    box-shadow: 2px 3px 10px #4e9afd;
+    font: 500 160% Tahoma, Geneva, sans-serif;
+}
+
+
+.img1 {
+    float: right;
+    height: 100%;
+    position: relative;
+    right: 70%;
+}
+
+.form1 {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 30%;
+    /* background-color:blue;*/
+}
+
+form .text101 {
+    position: absolute;
+    width: 130px;
+    text-align: center;
+    line-height: 60px;
+    /*background-color: olive;*/
+}
+
+
+.input1 {
+    position: absolute;
+    left: 140px;
+    top: 20%;
+    width: 10%;
+    height: 60%;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+
+    box-shadow: 1px 2px 8px #c2dcff;
+    font: 300 70% Tahoma, Geneva, sans-serif;
+    letter-spacing: 2px;
+
+    transition-property: width, height, top, box-shadow, border-radius;
+    transition-duration: 1s, 1s, 1s, 1s, 1s;
+    background-image: url("图片\searchicon.png");
+
+}
+
+.input1:hover {
+    width: 80%;
+    top: 10%;
+    height: 80%;
+    border-radius: 5px;
+    box-shadow: 1px 2px 7px #378cfa;
+}
+
+.input1:focus {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    outline-style: none;
+    border-radius: 8px;
+    box-shadow: 1px 2px 7px #0066ec;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content2 {
+    position: relative;
+}
+
+.table1 {
+    width: 50%;
+    position: relative;
+    left: 8%;
+}
+
+.box1 {
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 2px 3px 10px #c2dcff;
+    font: 300 110% Tahoma, Geneva, sans-serif;
+
+    transition-property: width, box-shadow, font;
+    transition-duration: 0.5s, 0.5s, 0.5s;
+}
+
+.box1:hover {
+    width: 100%;
+    box-shadow: 1px 2px 15px #4e9afd;
+    font: 400 150% Tahoma, Geneva, sans-serif;
+}
+
+.text02 {
+    line-height: 250%;
+    color: black;
+}
+
+.img2 {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
