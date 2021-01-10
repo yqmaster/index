@@ -1,162 +1,79 @@
-.maintitle {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    border: solid 6px rgb(255, 255, 255);
-    border-top-width: 7px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #c2dcff;
-    border-left-color: rgb(0, 188, 245);
-    background-image: linear-gradient(to right, rgb(157, 227, 248)-60%, rgb(255, 255, 255)40%);
+* {
+    margin: 0;
+}
 
-    height: 50px;
-    font: 500 200% Tahoma, Geneva, sans-serif;
-    text-indent: -50%;
-    text-align: center;
-    text-shadow: 0px 0px 0px rgb(29, 68, 87);
+.welcomebox {
+    background-color: rgb(239, 223, 255);
+    height: 110px;
+}
+
+.welcometext1 {
+    font-size: 300%;
+    font-weight: 400;
+    line-height: 100px;
     letter-spacing: 20px;
+}
+
+.welcometext {
+    background-color: rgb(209, 163, 253);
+}
+
+.titletext1 {
+    font-size: 250%;
+    font-weight: 600;
+    color: gray;
     line-height: 50px;
+    letter-spacing: 40px;
 
-    transition-property: box-shadow, height, font, text-indent, text-shadow, letter-spacing, border-radius, background-image;
-    transition-duration: 0.8s, 0.5s, 0.5s, 0.8s, 0.5s, 0.5s, 0.5s, 0.5s, 0.8s;
-    transition-timing-function: ease;
+    margin-top: 50px;
+    padding-left: 50px
 }
 
-.maintitle:hover {
-    box-shadow: 1px 2px 7px #4e9afd;
-    border-radius: 40px;
-    height: 70px;
-
-    font: 540 255% Tahoma, Geneva, sans-serif;
-    text-indent: 00%;
-    text-shadow: 2px 1px 2px rgb(49, 99, 124);
-    letter-spacing: 30px;
-    line-height: 70px;
-
-    background-image: linear-gradient(to right, rgb(71, 210, 252)-100%, rgb(255, 255, 255)70%);
+.contbox1 {
+    width: 90%;
+    margin: auto;
 }
 
-.content101 {
+.contbox1img {
+    width: 30%;
+    margin: auto;
+}
+
+#pic1-1 {
+    width: 100%;
+}
+
+.form1-1 {
+    width: 100%;
     height: 100px;
-    box-shadow: 1px 2px 7px #c2dcff;
-    border-radius: 2px;
-    font: 500 100% Tahoma, Geneva, sans-serif;
-    letter-spacing: 1px;
-    line-height: 100%;
-
-    position: relative;
-    transition-property: box-shadow, border-radius, font;
-    transition-duration: 0.2s, 0.2s, 0.2s;
 }
 
-.content101:hover {
-    border-radius: 15px;
-    box-shadow: 2px 3px 10px #4e9afd;
-    font: 500 160% Tahoma, Geneva, sans-serif;
-}
-
-
-.img1 {
-    float: right;
-    height: 100%;
-    position: relative;
-    right: 70%;
-}
-
-.form1 {
-    position: relative;
-    width: 60%;
-    height: 60%;
-    top: 20%;
-    left: 30%;
-    /* background-color:blue;*/
-}
-
-form .text101 {
-    position: absolute;
-    width: 130px;
-    text-align: center;
-    line-height: 60px;
-    /*background-color: olive;*/
-}
-
-
-.input1 {
-    position: absolute;
-    left: 140px;
-    top: 20%;
-    width: 10%;
-    height: 60%;
-    border-style: solid;
-    border-color: white;
-    border-radius: 30px;
-
-    box-shadow: 1px 2px 8px #c2dcff;
-    font: 300 70% Tahoma, Geneva, sans-serif;
-    letter-spacing: 2px;
-
-    transition-property: width, height, top, box-shadow, border-radius;
-    transition-duration: 1s, 1s, 1s, 1s, 1s;
-    background-image: url("图片\searchicon.png");
-
-}
-
-.input1:hover {
-    width: 80%;
-    top: 10%;
-    height: 80%;
-    border-radius: 5px;
-    box-shadow: 1px 2px 7px #378cfa;
-}
-
-.input1:focus {
-    width: 80%;
-    height: 80%;
-    top: 10%;
+.input1-1 {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    border-radius:40px;
+    border-style: none;
     outline-style: none;
-    border-radius: 8px;
-    box-shadow: 1px 2px 7px #0066ec;
+    box-shadow: 1px 1px 10px rgb(146, 180, 255);
+    color: white;
+    text-align: left;
+    padding-left: 40px;
+    font-size: 200%;
+}
+.input1-1:hover{
+    width: 95%;
+    color: gray;
+    box-shadow: 3px 5px 15px rgb(54, 117, 255);
 }
 
-a {
-    text-decoration: none;
+.input1-1:focus {
+    
 }
 
-.content2 {
-    position: relative;
-}
 
-.table1 {
-    width: 50%;
-    position: relative;
-    left: 8%;
-}
+.sousuo1{
+    float: left;
 
-.box1 {
-    position: relative;
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 2px 3px 10px #c2dcff;
-    font: 300 110% Tahoma, Geneva, sans-serif;
-
-    transition-property: width, box-shadow, font;
-    transition-duration: 0.5s, 0.5s, 0.5s;
-}
-
-.box1:hover {
-    width: 100%;
-    box-shadow: 1px 2px 15px #4e9afd;
-    font: 400 150% Tahoma, Geneva, sans-serif;
-}
-
-.text02 {
-    line-height: 250%;
-    color: black;
-}
-
-.img2 {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
+    
 }
