@@ -4,14 +4,14 @@
 
 .welcomebox {
     background-color: rgb(239, 223, 255);
-    height: 110px;
+    height: 120px;
 }
 
 .welcometext1 {
-    font-size: 300%;
+    font-size: 250%;
     font-weight: 400;
-    line-height: 100px;
-    letter-spacing: 20px;
+    line-height: 110px;
+    letter-spacing: 15px;
 }
 
 .welcometext {
@@ -22,20 +22,37 @@
     font-size: 250%;
     font-weight: 600;
     color: gray;
-    line-height: 50px;
+    line-height: 120px;
     letter-spacing: 40px;
 
-    margin-top: 50px;
-    padding-left: 50px
+    margin-top: 20px;
+    padding-left: 50px;
+}
+
+.cont1 {
+    height: 400px;
 }
 
 .contbox1 {
     width: 90%;
+    height: 90%;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    border-width: 20px;
     margin: auto;
+    box-shadow: 2px 3px 10px rgb(240, 223, 255);
+    transition-property: box-shadow;
+    transition-duration: 1s;
+}
+
+.contbox1:hover {
+    border-radius: 10px;
+    box-shadow: 3px 4px 10px rgb(196, 143, 247);
 }
 
 .contbox1img {
-    width: 30%;
+    width: 50%;
     margin: auto;
 }
 
@@ -45,35 +62,47 @@
 
 .form1-1 {
     width: 100%;
-    height: 100px;
+    height: 120px;
 }
 
 .input1-1 {
-    width: 80px;
-    height: 80px;
+    z-index: 1;
+    float: left;
+    width: 60px;
+    height: 100px;
     margin-top: 10px;
-    border-radius:40px;
+    border-radius: 50px;
     border-style: none;
     outline-style: none;
     box-shadow: 1px 1px 10px rgb(146, 180, 255);
     color: white;
     text-align: left;
     padding-left: 40px;
-    font-size: 200%;
+    font-size: 300%;
+    background-color: rgb(146, 180, 255);
+
+    transition-property: width, box-shadow, border-radius;
+    transition-duration: 0.8s, 0.8s, 0.8s;
 }
-.input1-1:hover{
+
+.input1-1:hover {
     width: 95%;
     color: gray;
     box-shadow: 3px 5px 15px rgb(54, 117, 255);
+    background-color: rgb(251, 253, 255);
+    border-radius: 30px
 }
 
-.input1-1:focus {
-    
-}
+.sousuo1 {
+    z-index: -1;
+    position: relative;
+    clear: both;
+    top: -110px;
+    margin-left: 120px;
 
+    color: gray;
+    line-height: 120px;
+    font-size: 250%;
+    letter-spacing: 10px;
 
-.sousuo1{
-    float: left;
-
-    
 }
