@@ -231,6 +231,6 @@ a {
 
 .litlebox:hover{
     opacity:0.0;/*图片透明*/
-    transition :opacity 1s;
+    transition :opacity 2s;
 }
 
