@@ -11,7 +11,7 @@
     font-size: 250%;
     font-weight: 400;
     line-height: 110px;
-    letter-spacing: 15px;
+    letter-spacing: 6px;
 }
 
 .welcometext {
@@ -35,34 +35,38 @@
 
 .contbox1 {
     width: 90%;
-    height: 90%;
+    height: 370px;
     border-style: solid;
     border-radius: 5px;
     border-color: rgb(255, 255, 255);
-    border-width: 20px;
+    border-width: 10px;
     margin: auto;
     box-shadow: 2px 3px 10px rgb(240, 223, 255);
-    transition-property: box-shadow;
-    transition-duration: 1s;
+    transition-property: box-shadow, border-radius;
+    transition-duration: 1s, 1s;
 }
 
 .contbox1:hover {
-    border-radius: 10px;
-    box-shadow: 3px 4px 10px rgb(196, 143, 247);
+    border-radius: 20px;
+    box-shadow: 3px 4px 30px rgb(196, 143, 247);
 }
 
 .contbox1img {
-    width: 50%;
+    width: 45%;
     margin: auto;
 }
 
 #pic1-1 {
-    width: 100%;
+    width: 90%;
+    margin: 5%;
+    margin-top: 10%;
+    margin-bottom: 0%;
 }
 
 .form1-1 {
     width: 100%;
     height: 120px;
+
 }
 
 .input1-1 {
@@ -70,25 +74,25 @@
     float: left;
     width: 60px;
     height: 100px;
-    margin-top: 10px;
     border-radius: 50px;
     border-style: none;
     outline-style: none;
     box-shadow: 1px 1px 10px rgb(146, 180, 255);
-    color: white;
+    color: rgb(146, 180, 255);
     text-align: left;
     padding-left: 40px;
     font-size: 300%;
+    letter-spacing: 5px;
     background-color: rgb(146, 180, 255);
 
     transition-property: width, box-shadow, border-radius;
-    transition-duration: 0.8s, 0.8s, 0.8s;
+    transition-duration: 0.5s, 0.8s, 0.8s;
 }
 
 .input1-1:hover {
     width: 95%;
     color: gray;
-    box-shadow: 3px 5px 15px rgb(54, 117, 255);
+    box-shadow: 3px 5px 15px rgb(146, 180, 255);
     background-color: rgb(251, 253, 255);
     border-radius: 30px
 }
