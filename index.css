@@ -1,6 +1,8 @@
 * {
-    margin: 0;
+    margin:0px;
 }
+
+
 
 .icons{
     fill:gray;
@@ -35,6 +37,7 @@
 
 .cont1 {
     height: 400px;
+    position: relative;
 }
 
 .contbox1 {
@@ -68,8 +71,11 @@
 }
 
 .form1-1 {
+    position: absolute;
     width: 100%;
     height: 102px;
+    bottom: 30px;
+    
 
 }
 
