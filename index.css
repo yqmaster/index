@@ -77,13 +77,13 @@
     border-radius: 50px;
     border-style: none;
     outline-style: none;
-    box-shadow: 1px 1px 10px rgb(146, 180, 255);
-    color: rgb(146, 180, 255);
+    box-shadow: 1px 1px 10px rgb(209, 163, 253);
+    color: rgb(209, 163, 253);
     text-align: left;
     padding-left: 40px;
     font-size: 300%;
     letter-spacing: 5px;
-    background-color: rgb(146, 180, 255);
+    background-color: rgb(209, 163, 253);
 
     transition-property: width, box-shadow, border-radius;
     transition-duration: 0.5s, 0.8s, 0.8s;
@@ -92,7 +92,7 @@
 .input1-1:hover {
     width: 95%;
     color: gray;
-    box-shadow: 3px 5px 15px rgb(146, 180, 255);
+    box-shadow: 3px 5px 15px rgb209, 163, 253);
     background-color: rgb(251, 253, 255);
     border-radius: 30px
 }
