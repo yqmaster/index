@@ -221,7 +221,9 @@ a {
     background-color: transparent;
     pointer-events: none;
 }
-
+.picbox:active{
+    pointer-events: none;
+}
 
 .boxpic {
     width: 100%;
@@ -261,7 +263,7 @@ a {
 }
 
 .toolsboxs:active{
-    
+    pointer-events: none;
 }
 .toolsboxs:hover .toolsboxtext {
     transition: all;
