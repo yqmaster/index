@@ -216,13 +216,14 @@ transition-property :opacity;
 transition-duration: 2s;
 }
 
-.picbox:active {
+.picbox:hover {
     opacity:0;
     position: fixed;
     height: 100%;
     top: 20%;
     left: 0px;
     background-color: transparent;
+    pointer-events: none;
 }
 
 .boxpic {
