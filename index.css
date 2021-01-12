@@ -129,7 +129,7 @@ a {
     height: 50px;
     margin-top: 26px;
     margin-left: -76px;
-    pointer-events: none;
+    pointer-events: none;/*点击时候不影响*/
 }
 
 .iconsearch2 {
@@ -209,20 +209,22 @@ a {
 .picbox {
     width: 100%;
     height: 200px;
-opacity: 1;
+    opacity: 1;
 
     background-color: rgb(246, 236, 255);
-transition-property :opacity;
-transition-duration: 2s;
+    transition-property: opacity;
+    transition-duration: 2s;
 }
 
 .picbox:hover {
-    opacity:0;
+    opacity: 0;
     position: fixed;
     height: 100%;
     top: 20%;
     left: 0px;
     background-color: transparent;
+}
+.picbox：active{
     pointer-events: none;
 }
 
@@ -235,6 +237,3 @@ transition-duration: 2s;
     box-shadow: 2px 3px 10px rgb(240, 223, 255);
 
 }
-
-
-
