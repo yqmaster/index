@@ -226,11 +226,11 @@ a {
     top: 20%;
     left: 0px;
     background-color: transparent;
+    pointer-events: none;
 }
 
 .smtpicbox:active {
     z-index: 1;
-    pointer-events: none;
 }
 
 .line2 {
