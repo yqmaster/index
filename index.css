@@ -17,93 +17,100 @@ a {
     height: 130px;
 }
 
-.welcometext1 {
+.welcometext {
     font-size: 250%;
     font-weight: 400;
     line-height: 110px;
     letter-spacing: 6px;
-}
-
-.welcometext {
     background-color: rgb(209, 163, 253);
 }
 
-.titletext1 {
-    font-size: 250%;
+.titlebox {
+    height: 120px;
+
+}
+
+.titletext {
+    height: 120px;
+    font-size: 40px;
     font-weight: 600;
     color: rgb(126, 126, 126);
     line-height: 120px;
-    letter-spacing: 40px;
+    letter-spacing: 30px;
 
     margin-top: 20px;
     padding-left: 50px;
 }
 
-.cont1 {
-    height: 400px;
-    position: relative;
+.titledirection {
+    height: 120px;
 }
 
-.contbox1 {
+.direction-down {
+    width: 50px;
+    margin-bottom: -9px;
+    transform: rotate(270deg);
+}
+
+.searchbox {
+    position: relative;
     width: 90%;
-    height: 370px;
+    height: 360px;
     border-style: solid;
     border-radius: 5px;
     border-color: rgb(255, 255, 255);
     border-width: 10px;
     margin: auto;
+    margin-bottom: 30px;
     box-shadow: 2px 3px 10px rgb(240, 223, 255);
     transition-property: box-shadow, border-radius;
     transition-duration: 1s, 1s;
 }
 
-.contbox1:hover {
+.searchbox:hover {
     border-radius: 20px;
     box-shadow: 3px 4px 30px rgb(196, 143, 247);
 }
 
-.contbox1img {
+.searchboximg {
     width: 45%;
     margin: auto;
 }
 
-#pic1-1 {
+.searchboxpic {
     width: 90%;
     margin: 5%;
-    margin-top: 10%;
-    margin-bottom: 0%;
 }
 
-.form1-1 {
+.searchboxform {
     position: absolute;
-    width: 85%;
+    width: 90%;
     height: 102px;
-    left: 7%;
-    bottom: 30px;
+    left: 5%;
+    bottom: 5%;
 }
 
-.input1-1 {
-    z-index: 1;
+
+.searchboxinput {
     float: left;
     width: 60px;
     height: 100px;
-    margin-top: 0px;
     border-radius: 50px;
     border-style: none;
     outline-style: none;
-    box-shadow: 1px 1px 10px rgb(209, 163, 253);
-    color: rgb(209, 163, 253);
-    text-align: left;
-    padding-left: 40px;
-    font-size: 300%;
-    letter-spacing: 5px;
     background-color: rgb(209, 163, 253);
+    box-shadow: 1px 1px 10px rgb(209, 163, 253);
 
-    transition-property: width, box-shadow, border-radius;
-    transition-duration: 0.5s, 0.8s, 0.8s;
+    color: rgb(0, 0, 0, 0);
+    padding-left: 40px;
+    font-size: 250%;
+    letter-spacing: 5px;
+
+    transition-property: width, box-shadow, color, border-radius, background-color;
+    transition-duration: 0.5s, 0.8s, 0.8s, 0.8s, 0.8s;
 }
 
-.input1-1:hover {
+.searchboxinput:hover {
     width: 95%;
     color: gray;
     box-shadow: 3px 5px 15px rgb(209, 163, 253);
@@ -111,32 +118,30 @@ a {
     border-radius: 30px;
 }
 
-.search1 {
-    z-index: 1;
-    width: 0px;
-}
-
-.search2 {
-    z-index: -1;
-    height: 100%;
-    position: relative;
-    clear: both;
-    top: -102px;
-    margin-left: 120px;
-}
-
-.iconsearch1 {
-    height: 50px;
+.searchicon1 {
+    width: 50px;
     margin-top: 26px;
     margin-left: -76px;
     pointer-events: none;
     /*点击时候不影响*/
 }
 
-.iconsearch2 {
+.searchtextbox {
+    z-index: -1;
+    clear: both;
+    /*不受浮动元素影响*/
+    width: 400px;
+    height: 100%;
+    position: relative;
+    top: -102px;
+    left: 120px;
+}
+
+.searchicon2 {
     float: left;
     height: 50px;
     margin-top: 26px;
+    margin-bottom: 26px;
 }
 
 .searchtext {
@@ -152,11 +157,22 @@ a {
     letter-spacing: 10px;
 }
 
-.line1 {
+.fourboxline {
     position: relative;
     width: 100%;
     height: 300px;
-    /*background-color: brown;*/
+}
+
+.litlebox {
+    box-shadow: 2px 3px 10px rgb(240, 223, 255);
+    width: 20%;
+    height: 270px;
+}
+
+.leftbox1 {
+    float: right;
+    margin-right: 76%;
+    margin-top: -270px;
 }
 
 .leftbox2 {
@@ -164,45 +180,31 @@ a {
     margin-right: 52%;
 }
 
-.leftbox1 {
-    float: right;
-    margin-right: 76%;
-    margin-top: -260px;
-}
-
 .rightbox3 {
     float: left;
     margin-left: 52%;
-    margin-top: -260px;
+    margin-top: -270px;
 }
 
 .rightbox4 {
     float: left;
     margin-left: 76%;
-    margin-top: -260px;
-}
-
-.litlebox {
-    background-color: white;
-    box-shadow: 2px 3px 10px rgb(240, 223, 255);
-    width: 20%;
-    height: 260px;
+    margin-top: -270px;
 }
 
 .smtbox {
     width: 100%;
-    height: 60px;
+    height: 70px;
 }
 
 .smttext {
-    font-size: 200%;
+    font-size: 240%;
     color: black;
     letter-spacing: 5px;
-    line-height: 60px;
-
+    line-height: 70px;
 }
 
-.picbox {
+.smtpicbox {
     width: 100%;
     height: 200px;
     opacity: 1;
@@ -212,7 +214,11 @@ a {
     transition-duration: 2s;
 }
 
-.picbox:hover {
+.boxpic {
+    width: 100%;
+}
+
+.smtpicbox:hover {
     z-index: 1;
     opacity: 0;
     position: fixed;
@@ -222,26 +228,21 @@ a {
     background-color: transparent;
 }
 
-.picbox:active {
+.smtpicbox:active {
     z-index: 1;
     pointer-events: none;
-}
-
-.boxpic {
-    width: 100%;
-    margin-bottom: 0px;
 }
 
 .line2 {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 220px;
     /*background-color: blue;*/
 }
 
 .toolsboxs {
     position: relative;
-    width: 40%;
+    width: 45%;
     height: 200px;
     border-radius: 15px;
     box-shadow: 2px 3px 10px rgb(211, 211, 211);
@@ -252,6 +253,56 @@ a {
 .toolsboxs:hover {
     border-radius: 30px;
     box-shadow: 2px 3px 15px rgb(104, 104, 104);
+}
+
+.lefttoolsbox {
+    float: right;
+    margin-right: 4%;
+}
+
+.righttoolsbox {
+    float: left;
+    margin-left: 4%;
+}
+
+.toolsboxtext {
+    position: absolute;
+    width: 300px;
+    height: 180px;
+    top: 15px;
+    left: 30px;
+    /*background-color: crimson;*/
+}
+
+.toolsboxtitle {
+    line-height: 60px;
+    color: white;
+    font-size: 35px;
+    font-weight: normal;
+    letter-spacing: 4px;
+}
+
+.toolsboxcontent {
+    width: 180px;
+    height: 100px;
+    margin-top: 5px;
+    line-height: 25px;
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.toolsboxpic {
+    position: absolute;
+    bottom: 0%;
+    right: 5%;
+    width: 30%;
+    /*background-color: rgb(20, 57, 220)*/
+}
+
+.toolsboximg {
+    width: 100%;
 }
 
 #toolsbox1 {
@@ -280,54 +331,4 @@ a {
             rgba(70, 197, 114, 0.6)20%,
             rgba(59, 194, 111, 0.8)50%,
             rgb(36, 212, 103)70%);
-}
-
-.lefttoolsbox {
-    float: right;
-    margin-right: 6%;
-}
-
-.righttoolsbox {
-    float: left;
-    margin-left: 6%;
-}
-
-.toolsboxtext {
-    position: absolute;
-    width: 300px;
-    height: 180px;
-    top: 15px;
-    left: 30px;
-    /*background-color: crimson;*/
-}
-
-.toolsboxtitle {
-    line-height: 60px;
-    color: white;
-    font-size: 30px;
-    font-weight: normal;
-    letter-spacing: 4px;
-}
-
-.toolsboxcontent {
-    width: 180px;
-    height: 100px;
-    margin-top: 5px;
-    line-height: 25px;
-    color: rgb(235, 235, 235);
-    font-size: 18px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-}
-
-.toolsboxpic {
-    position: absolute;
-    bottom: 0%;
-    right: 5%;
-    width: 30%;
-    /*background-color: rgb(20, 57, 220)*/
-}
-
-.toolsboximg {
-    width: 100%;
 }
