@@ -26,14 +26,15 @@ a {
 }
 
 .titlebox {
-    height: 120px;
+    margin-top: 20px;
+    height: 100px;
 
 }
 
 .titletext {
     height: 120px;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: normal;
     color: rgb(126, 126, 126);
     line-height: 120px;
     letter-spacing: 30px;
@@ -47,7 +48,7 @@ a {
 }
 
 .direction-down {
-    width: 50px;
+    width: 40px;
     margin-bottom: -9px;
     transform: rotate(270deg);
 }
@@ -219,21 +220,21 @@ a {
     position: absolute;
     bottom: 0;
     width: 100%;
+
+    transition: all;
+    transition-duration: 2s;
 }
 
-.smtpicbox:hover {
+.boxpic:hover {
     z-index: 1;
     opacity: 0;
     position: fixed;
-    height: 100%;
+    height: 60%;
     top: 20%;
-    left: 0px;
-    background-color: transparent;
-    pointer-events: none;
+    left: 0;
 }
 
-.smtpicbox:active {
-    z-index: 1;
+.boxpic:active {
     pointer-events: none;
 }
 
@@ -310,28 +311,28 @@ a {
 
 #toolsbox1 {
     background-image: linear-gradient(-30deg,
-            rgba(199, 125, 255, 0.6)20%,
-            rgba(199, 125, 255, 0.8)50%,
+            rgba(199, 125, 255, 0.8)20%,
+            rgba(199, 125, 255, 0.9)50%,
             rgba(199, 125, 255, 1)70%);
 }
 
 #toolsbox2 {
     background-image: linear-gradient(-30deg,
-            rgba(125, 155, 255, 0.6)20%,
-            rgba(112, 143, 245, 0.8)50%,
+            rgba(125, 155, 255, 0.8)20%,
+            rgba(125, 155, 255, 0.9)50%,
             rgba(125, 155, 255, 1)70%);
 }
 
 #toolsbox3 {
     background-image: linear-gradient(-30deg,
-            rgba(255, 144, 125, 0.6)20%,
-            rgba(255, 144, 125, 0.8)50%,
+            rgba(255, 144, 125, 0.8)20%,
+            rgba(255, 144, 125, 0.9)50%,
             rgba(255, 144, 125, 1)70%);
 }
 
 #toolsbox4 {
     background-image: linear-gradient(-30deg,
-            rgba(70, 197, 114, 0.6)20%,
-            rgba(59, 194, 111, 0.8)50%,
+            rgba(36, 212, 103, 0.8)20%,
+            rgba(36, 212, 103, 0.9)50%,
             rgb(36, 212, 103)70%);
 }
