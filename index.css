@@ -2,6 +2,14 @@
     margin: 0px;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -12,13 +20,13 @@ a {
     z-index: 100;
     background-color: rgba(209, 163, 253);
     width: 100%;
-    height: 90px;
+    height: 130px;
 }
 
 .welcometext {
     font-size: 250%;
     font-weight: 300;
-    line-height: 90px;
+    line-height: 140px;
     letter-spacing: 10px;
 }
 
@@ -26,10 +34,10 @@ a {
     z-index: 1;
     position: sticky;
     top: -1px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: saturate(180%) blur(15px);
-    margin-top: 20px;
-    height: 100px;
+    margin: 20px 0;
+    height: 90px;
 }
 
 .titletext {
@@ -37,21 +45,11 @@ a {
     font-size: 35px;
     font-weight: normal;
     color: rgb(126, 126, 126);
-    line-height: 120px;
+    line-height: 110px;
     letter-spacing: 30px;
 
     margin-top: 20px;
     padding-left: 50px;
-}
-
-.titledirection {
-    height: 120px;
-}
-
-.direction-down {
-    width: 40px;
-    margin-bottom: -9px;
-    transform: rotate(270deg);
 }
 
 .searchbox {
@@ -66,14 +64,14 @@ a {
     background-color: rgb(248, 248, 248);
     margin: auto;
     margin-bottom: 30px;
-    box-shadow: 2px 3px 10px rgb(240, 223, 255);
+    box-shadow: 1px 2px 5px rgb(240, 223, 255);
     transition-property: box-shadow, border-radius;
     transition-duration: 1s, 1s;
 }
 
 .searchbox:hover {
     border-radius: 20px;
-    box-shadow: 3px 4px 30px rgb(196, 143, 247);
+    box-shadow: 2px 3px 20px rgb(226, 195, 255);
 }
 
 .searchboximg {
@@ -110,7 +108,7 @@ a {
     letter-spacing: 5px;
 
     transition-property: width, box-shadow, color, border-radius, background-color;
-    transition-duration: 0.5s, 0.8s, 0.8s, 0.8s, 0.8s;
+    transition-duration: 0.5s, 0.8s, 0.5s, 0.8s, 0.8s;
 }
 
 .searchboxinput:hover {
@@ -121,6 +119,18 @@ a {
     border-radius: 30px;
 }
 
+.sousuoicon {
+    float: left;
+    display: block;
+    height: 72px;
+    color:gray;
+
+    font-size: 72px;
+    margin-top: 15px;
+    margin-left: -87px;
+    pointer-events: none;
+}
+
 .searchicon1 {
     width: 50px;
     margin-top: 26px;
@@ -129,31 +139,22 @@ a {
     /*点击时候不影响*/
 }
 
-.searchtextbox {
+.searchtext {
     z-index: -1;
-    clear: both;
-    /*不受浮动元素影响*/
-    width: 400px;
-    height: 100%;
     position: relative;
     top: -102px;
-    left: 120px;
-}
-
-.searchicon2 {
-    float: left;
-    height: 50px;
-    margin-top: 26px;
-    margin-bottom: 26px;
-}
-
-.searchtext {
+    left: 140px;
+    clear: both;
+    /*不受浮动元素影响*/
     float: left;
     color: gray;
     line-height: 102px;
-    font-size: 250%;
+    font-size: 50px;
     letter-spacing: 10px;
-    margin-left: 10px;
+    transition: color 0.2s;
+}
+.searchboxinput:hover~.searchtext{
+    color: rgb(248, 248, 248);
 }
 
 #steam {
@@ -248,7 +249,6 @@ a {
     width: 45%;
     height: 240px;
     border-radius: 15px;
-    box-shadow: 2px 3px 10px rgb(211, 211, 211);
     transition-property: all;
     transition-duration: 0.5s;
 }
@@ -256,7 +256,6 @@ a {
 .toolsboxs:hover {
     opacity: 0;
     border-radius: 30px;
-    box-shadow: 2px 3px 15px rgb(104, 104, 104);
 }
 
 .lefttoolsbox {
@@ -387,6 +386,7 @@ a {
     background-color: rgb(235, 138, 255);
     transition: background-color, 0.5s;
 }
+
 .line3 #flowbox3:hover {
     background-color: rgb(253, 246, 255);
 }
@@ -395,6 +395,7 @@ a {
     background-color: rgb(176, 147, 255);
     transition: background-color, 0.5s;
 }
+
 .line3 #flowbox4:hover {
     background-color: rgb(249, 247, 255);
 }
@@ -402,7 +403,7 @@ a {
 .line3 center {
     color: rgb(78, 78, 78);
     font-size: 40px;
-    font-weight:lighter;
+    font-weight: lighter;
     line-height: 50px;
     width: 50px;
     height: 300px;
