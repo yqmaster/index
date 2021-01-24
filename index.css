@@ -384,6 +384,12 @@ a {
             rgba(36, 212, 103, 0.9)50%,
             rgb(36, 212, 103)70%);
 }
+#toolsbox5 {
+    background-image: linear-gradient(-30deg,
+            rgba(255, 162, 193, 0.8)20%,
+            rgba(255, 162, 193, 0.9)50%,
+            rgb(255, 162, 193)70%);
+}
 
 .line3 {
     width: 95%;
