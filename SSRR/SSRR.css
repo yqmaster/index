@@ -15,15 +15,25 @@ html {
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -0.35em;
+    vertical-align: -0.30em;
     fill: currentColor;
     overflow: hidden;
+}
+
+.number {
+    transform: scale(1.4);
+}
+
+.picicon {
+    width: 1.8em;
+    height: 1.8em;
+    margin: -0.5em 0;
 }
 
 header {
     z-index: 9999;
     position: sticky;
-    top:0;
+    top: 0;
     background-color: #E382A3;
     height: 2.5em;
     padding: 0 1em;
@@ -85,7 +95,7 @@ header {
     border-radius: 0.5em;
     box-shadow: 0em 0.5em 1em -1.1em #cfcfcf;
 
-    transition:all 1s;
+    transition: all 1s;
 }
 
 .content .box:hover {
@@ -114,8 +124,9 @@ button {
 button:focus {
     background-color: #D9507E;
 }
-.helppic{
-    width: 90%;
-    max-width: 20em;
+
+.helppic {
+    width: 85%;
+    max-width: 30em;
     margin: 0 1em;
 }
