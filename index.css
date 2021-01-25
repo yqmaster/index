@@ -1,496 +1,171 @@
+@media only screen and (min-width: 200px){
+    html {
+        font-size: 3px !important; 
+    }
+}
+@media only screen and (min-width: 300px){
+    html {
+        font-size: 4px !important; 
+    }
+}
+@media only screen and (min-width: 400px){
+    html {
+        font-size: 5px !important; 
+    }
+}
+@media only screen and (min-width: 500px){
+    html {
+        font-size: 6px !important;
+    }
+}
+@media only screen and (min-width: 600px){
+    html {
+        font-size: 7px !important;
+    }
+}
+@media only screen and (min-width: 700px){
+    html {
+        font-size: 8px !important; 
+    }
+}
+@media only screen and (min-width: 800px){
+    html {
+        font-size: 9px !important; 
+    }
+}
+
+
 * {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+html {
+    background-color: #fafafa;
+    font-size: 8px;
 }
 
 .icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.30rem;
     fill: currentColor;
     overflow: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    -webkit-tap-highlight-color: transparent;
+.number {
+    transform: scale(1.4);
 }
 
-.welcomebox {
-    background-color: rgba(209, 163, 253);
-    width: 100%;
-    height: 130px;
+.picicon {
+    width: 5rem;
+    height: 5rem;
+    margin: -1rem 0;
 }
 
-.welcometext {
-    font-size: 250%;
-    font-weight: 300;
-    line-height: 140px;
-    letter-spacing: 10px;
-}
-
-.titlebox {
-    z-index: 100;
+header {
+    z-index: 9999;
     position: sticky;
-    top: -1px;
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: saturate(180%) blur(15px);
-    margin: 20px 0;
-    height: 110px;
+    top: 0;
+    background-color: #E382A3;
+    height: 15rem;
+    padding: 0 7rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 5rem;
+    color: #fafafa;
+    letter-spacing: 1.5rem;
 }
 
-.titletext {
-    font-size: 50px;
-    font-weight: normal;
-    color: rgb(126, 126, 126);
-    line-height: 120px;
-    letter-spacing: 30px;
-
-    margin-top: 20px;
-    padding-left: 50px;
+.feijiicon {
+    transform: rotatey(180deg);
 }
 
-.titletext:hover .icon {
-    animation: iconflashone 1s linear;
+.choose {
+    height: 12rem;
+    font-size: 5rem;
+    background-color: #ffffff;
+    color: gray;
+
+    margin: 5rem 10rem;
+    padding: 2rem 3rem 4rem ;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    letter-spacing: 1.3rem;
 }
 
-@keyframes iconflashone {
-    0% {
-        transform: rotateZ(0deg) scale(1);
-    }
-
-    10% {
-        transform: rotateZ(0deg) scale(0.7);
-    }
-
-    20% {
-        transform: rotateZ(0deg) scale(0.8);
-    }
-
-    30% {
-        transform: rotateZ(0deg) scale(1.0);
-    }
-
-    40% {
-        transform: rotateZ(15deg) scale(1.4);
-    }
-
-    50% {
-        transform: rotateZ(-15deg) scale(2.0);
-    }
-
-    60% {
-        transform: rotateZ(15deg) scale(2.2);
-    }
-
-    70% {
-        transform: rotateZ(-15deg) scale(2.2);
-    }
-
-    80% {
-        transform: rotateZ(15deg) scale(1.8);
-    }
-
-    90% {
-        transform: rotateZ(0deg) scale(1.2);
-    }
-
-    100% {
-        transform: rotateZ(0deg) scale(1);
-    }
+.choose .box {
+    height: 10rem;
+    width: 25rem;
+    line-height: 10rem;
+    text-align: center;
 }
 
-.searchbox {
-    z-index: 0;
-    position: relative;
-    width: 90%;
-    height: 360px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgb(248, 248, 248);
-    border-top-color: rgba(209, 163, 253);
-    border-width: 6px;
-    background-color: rgb(248, 248, 248);
-    margin: auto;
-    margin-bottom: 30px;
-    box-shadow: 1px 2px 5px rgb(240, 223, 255);
-    transition-property: box-shadow, border-radius;
-    transition-duration: 1s, 1s;
+.choose .line {
+    height: 0.1rem;
+    width: 21rem;
+    margin-left: 2rem;
+    background-color: gray;
 }
 
-.searchbox:hover {
-    border-radius: 20px;
-    box-shadow: 2px 3px 20px rgb(226, 195, 255);
+.choise {
+    width: 85%;
+    margin: 0 auto;
+
+    font-size: 3rem;
+    line-height: 5rem;
+    letter-spacing: 0.3rem;
 }
 
-.searchboximg {
-    width: 45%;
-    margin: auto;
+.content .box {
+    margin: 4rem auto;
+    padding: 4rem 8rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0rem 1rem 2rem -1.2rem #cfcfcf;
+
+    transition: all 1s;
 }
 
-.searchboximg:hover .searchboxpic {
-    transform: scale(1.5);
+.content .box:hover {
+    border-radius: 3rem;
+    transform: scale(1.05);
+    box-shadow: 0rem 1rem 3rem -2rem #535353;
 }
 
-.searchboxpic {
-    width: 90%;
-    margin: 5%;
-    transition: all 0.5s cubic-bezier(0.74, -1.92, 0, 2.78);
-}
+button {
+    background-color: #E382A3;
+    height: 8rem;
 
-.searchboxform {
-    position: absolute;
-    width: 90%;
-    height: 102px;
-    left: 5%;
-    bottom: 5%;
-}
+    padding: 0 4rem;
+    margin: -0.5rem 0rem 2rem 0rem;
 
-.searchboxinput {
-    float: left;
-    width: 60px;
-    height: 100px;
-    border-radius: 50px;
-    border-style: none;
     outline-style: none;
-    background-color: rgb(209, 163, 253);
-    box-shadow: 1px 1px 10px rgb(209, 163, 253);
+    border-style: none;
+    border-radius: 4rem;
+    box-shadow: 0rem 0rem 1.8rem -0.4rem #E382A3;
 
-    color: rgb(0, 0, 0, 0);
-    padding-left: 40px;
-    font-size: 250%;
-    letter-spacing: 5px;
-
-    transition-property: width, box-shadow, color, border-radius, background-color;
-    transition-duration: 0.5s, 0.8s, 0.5s, 0.8s, 0.8s;
+    font-size: 3rem;
+    color: #ffffff;
+    letter-spacing: 0.5rem;
+    transition: all 0.5s;
 }
 
-.searchboxinput:hover {
-    width: 95%;
-    color: gray;
-    box-shadow: 3px 5px 15px rgb(209, 163, 253);
-    background-color: rgb(248, 248, 248);
-    border-radius: 30px;
+button:active {
+    background-color: #D9507E;
 }
 
-.sousuoicon {
-    float: left;
-    display: block;
-    height: 72px;
-    color: gray;
 
-    font-size: 72px;
-    margin-top: 15px;
-    margin-left: -87px;
-    pointer-events: none;
-}
-
-.searchicon1 {
-    width: 50px;
-    margin-top: 26px;
-    margin-left: -76px;
-    pointer-events: none;
-    /*点击时候不影响*/
-}
-
-.searchtext {
-    z-index: -1;
-    position: relative;
-    top: -102px;
-    left: 140px;
-    clear: both;
-    /*不受浮动元素影响*/
-    float: left;
-    color: gray;
-    line-height: 102px;
-    font-size: 50px;
-    letter-spacing: 10px;
-    transition: color 0.2s;
-}
-
-.searchboxinput:hover~.searchtext {
-    color: rgb(248, 248, 248);
-}
-
-#steam {
-    letter-spacing: 10px;
-}
-
-.fourboxline {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.litlebox {
-    box-shadow: 2px 3px 10px rgb(240, 223, 255);
-    width: 22%;
-    height: 290px;
-}
-
-.leftbox1 {
-    float: right;
-    margin-right: 74%;
-    margin-top: -290px;
-}
-
-.leftbox2 {
-    float: right;
-    margin-right: 50.7%;
-}
-
-.rightbox3 {
-    float: left;
-    margin-left: 50.7%;
-    margin-top: -290px;
-}
-
-.rightbox4 {
-    float: left;
-    margin-left: 74%;
-    margin-top: -290px;
-}
-
-.smtbox {
-    width: 100%;
-    height: 70px;
-}
-
-.smttext {
-    font-size: 240%;
-    color: black;
-    letter-spacing: 5px;
-    line-height: 70px;
-}
-
-.smtpicbox {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    opacity: 1;
-
-    background-color: rgb(246, 236, 255);
-    transition-property: opacity;
-    transition-duration: 2s;
-}
-
-.boxpic {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-    transition: all 0.5s cubic-bezier(0.74, -1.92, 0, 2.78);
-}
-
-.litlebox:hover .boxpic {
-    z-index: 2;
-    transform: scale(1.3);
-}
-
-.line2 {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    /*background-color: blue;*/
-}
-
-.toolsboxs {
-    position: relative;
-    width: 45%;
-    height: 240px;
-    border-radius: 15px;
-    transition-property: all;
-    transition-duration: 0.5s;
-}
-
-.toolsboxs:hover {
-    opacity: 0;
-    border-radius: 30px;
-}
-
-.lefttoolsbox {
-    float: right;
-    margin-right: 4%;
-}
-
-.righttoolsbox {
-    float: left;
-    margin-left: 4%;
-}
-
-.toolsboxtext {
-    position: absolute;
-    width: 300px;
-    height: 180px;
-    top: 15px;
-    left: 30px;
-}
-
-.toolsboxtitle {
-    line-height: 70px;
-    color: white;
-    font-size: 45px;
-    font-weight: normal;
-    letter-spacing: 4px;
-}
-
-.toolsboxcontent {
-    width: 240px;
-    height: 100px;
-    margin-top: 5px;
-    line-height: 30px;
-    color: rgb(235, 235, 235);
-    font-size: 25px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-}
-
-.toolsboxpic {
-    position: absolute;
-    bottom: 0%;
-    right: 5%;
-    width: 35%;
-    /*background-color: rgb(20, 57, 220)*/
-}
-
-.toolsboximg {
-    width: 100%;
-}
-
-#toolsbox1 {
-    background-image: linear-gradient(-30deg,
-            rgba(199, 125, 255, 0.8)20%,
-            rgba(199, 125, 255, 0.9)50%,
-            rgba(199, 125, 255, 1)70%);
-}
-
-#toolsbox2 {
-    background-image: linear-gradient(-30deg,
-            rgba(125, 155, 255, 0.8)20%,
-            rgba(125, 155, 255, 0.9)50%,
-            rgba(125, 155, 255, 1)70%);
-}
-
-#toolsbox3 {
-    background-image: linear-gradient(-30deg,
-            rgba(255, 144, 125, 0.8)20%,
-            rgba(255, 144, 125, 0.9)50%,
-            rgba(255, 144, 125, 1)70%);
-}
-
-#toolsbox4 {
-    background-image: linear-gradient(-30deg,
-            rgba(36, 212, 103, 0.8)20%,
-            rgba(36, 212, 103, 0.9)50%,
-            rgb(36, 212, 103)70%);
-}
-#toolsbox5 {
-    background-image: linear-gradient(-30deg,
-            rgba(255, 162, 193, 0.8)20%,
-            rgba(255, 162, 193, 0.9)50%,
-            rgb(255, 162, 193)70%);
-}
-
-.line3 {
-    width: 95%;
-    height: 440px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.flowbox {
-    float: left;
-    margin-top: 20px;
-    width: 25%;
-    height: 400px;
-
-    transition: all;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s;
-}
-
-.line3:hover .flowbox {
-    width: 10%;
-}
-
-.line3 .flowbox:hover {
-    margin-top: 0px;
-    width: 68%;
-    height: 440px;
-    box-shadow: 5px 7px 20px rgb(219, 219, 219);
-}
-
-#flowbox1 {
-    background-color: rgb(220, 255, 64);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox1:hover {
-    background-color: rgb(252, 255, 241);
-}
-
-#flowbox2 {
-    background-color: rgb(255, 239, 93);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox2:hover {
-    background-color: rgb(255, 254, 244);
-}
-
-#flowbox3 {
-    background-color: rgb(235, 138, 255);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox3:hover {
-    background-color: rgb(253, 246, 255);
-}
-
-#flowbox4 {
-    background-color: rgb(176, 147, 255);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox4:hover {
-    background-color: rgb(249, 247, 255);
-}
-
-.line3 center {
-    color: rgb(78, 78, 78);
-    font-size: 40px;
-    font-weight: lighter;
-    line-height: 50px;
-    width: 50px;
-    height: 300px;
-    writing-mode: vertical-lr;
-    margin: 60px auto;
-    letter-spacing: 40px;
-
-    transition: all;
-    transition-duration: 0.5s;
-}
-
-.line3 .flowbox:hover center {
-    margin: 80px auto;
-    opacity: 0;
-}
-
-.line3 p {
-    font-size: 20px;
-    width: 80%;
-    height: 350px;
-    margin-top: -400px;
-    margin-left: 10%;
-    letter-spacing: 2px;
-    line-height: 40px;
-    overflow: hidden;
-    opacity: 0;
-}
-
-.line3 .flowbox:hover p {
-    opacity: 1;
-    transition: all;
-    transition-delay: 0.5s;
-    transition-duration: 0.8s;
+.helppic {
+    width: 85%;
+    max-width: 70rem;
+    margin: 0 4rem;
 }
