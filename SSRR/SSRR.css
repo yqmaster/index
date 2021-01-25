@@ -42,7 +42,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    font-size: 6em;
+    font-size: 5em;
     color: #fafafa;
     letter-spacing: 0.2em;
 }
@@ -53,7 +53,7 @@ header {
 
 .choose {
     height: 2em;
-    font-size: 6em;
+    font-size: 5em;
     background-color: #ffffff;
     color: gray;
 
@@ -83,14 +83,14 @@ header {
     width: 90%;
     margin: 0 auto;
 
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 2em;
     letter-spacing: 0.1em;
 }
 
 .content .box {
-    margin: 1em auto;
-    padding: 1em 1em;
+    margin: 1.2em auto;
+    padding: 1em 2em;
     background-color: #ffffff;
     border-radius: 0.5em;
     box-shadow: 0em 0.5em 1em -1.1em #cfcfcf;
@@ -100,7 +100,8 @@ header {
 
 .content .box:hover {
     border-radius: 1em;
-    box-shadow: 0em 0.5em 1em -0.8em #b9b9b9;
+    transform: scale(1.05);
+    box-shadow: 0em 0.5em 1em -0.7em #535353;
 }
 
 button {
