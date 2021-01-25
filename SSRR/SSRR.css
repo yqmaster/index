@@ -58,7 +58,7 @@ html {
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -0.30rem;
+    vertical-align: -1rem;
     fill: currentColor;
     overflow: hidden;
 }
@@ -70,7 +70,7 @@ html {
 .picicon {
     width: 5rem;
     height: 5rem;
-    margin: -1rem 0;
+    margin: -1.5rem 0;
 }
 
 header {
@@ -91,7 +91,57 @@ header {
 }
 
 .feijiicon {
-    transform: rotatey(180deg);
+    transform: rotatey(180deg) scale(0.8);
+}
+
+.feijiicon:hover {
+    animation: iconflashone 1s linear;
+}
+
+@keyframes iconflashone {
+    0% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.8);
+    }
+
+    10% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.5);
+    }
+
+    20% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.6);
+    }
+
+    30% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.8);
+    }
+
+    40% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(1.2);
+    }
+
+    50% {
+        transform: rotatey(180deg) rotateZ(-15deg) scale(1.8);
+    }
+
+    60% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(2.0);
+    }
+
+    70% {
+        transform: rotatey(180deg) rotateZ(-15deg) scale(2.0);
+    }
+
+    80% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(1.6);
+    }
+
+    90% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(1.0);
+    }
+
+    100% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(1);
+    }
 }
 
 .choose {
@@ -173,5 +223,10 @@ button:active {
 .helppic {
     width: 85%;
     max-width: 70rem;
-    margin: 0 4rem;
+    margin: 0 5rem;
+}
+
+.helppic:active {
+    transform: scale(1.5);
+    background-color: rgba(32, 32, 32, 0.329);
 }
