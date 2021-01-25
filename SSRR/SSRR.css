@@ -1,36 +1,42 @@
-@media only screen and (min-width: 200px){
+@media only screen and (min-width: 200px) {
     html {
-        font-size: 3px !important; 
+        font-size: 3px !important;
     }
 }
-@media only screen and (min-width: 300px){
+
+@media only screen and (min-width: 300px) {
     html {
-        font-size: 4px !important; 
+        font-size: 4px !important;
     }
 }
-@media only screen and (min-width: 400px){
+
+@media only screen and (min-width: 400px) {
     html {
-        font-size: 5px !important; 
+        font-size: 5px !important;
     }
 }
-@media only screen and (min-width: 500px){
+
+@media only screen and (min-width: 500px) {
     html {
         font-size: 6px !important;
     }
 }
-@media only screen and (min-width: 600px){
+
+@media only screen and (min-width: 600px) {
     html {
         font-size: 7px !important;
     }
 }
-@media only screen and (min-width: 700px){
+
+@media only screen and (min-width: 700px) {
     html {
-        font-size: 8px !important; 
+        font-size: 8px !important;
     }
 }
-@media only screen and (min-width: 800px){
+
+@media only screen and (min-width: 800px) {
     html {
-        font-size: 9px !important; 
+        font-size: 9px !important;
     }
 }
 
@@ -95,10 +101,10 @@ header {
     color: gray;
 
     margin: 5rem 10rem;
-    padding: 2rem 3rem 4rem ;
+    padding: 2rem 3rem 4rem;
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     letter-spacing: 1.3rem;
 }
 
