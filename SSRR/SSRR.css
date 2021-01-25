@@ -40,16 +40,9 @@
     }
 }
 
-
 * {
     margin: 0;
     padding: 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 li {
@@ -230,9 +223,10 @@ button:active {
     width: 85%;
     max-width: 70rem;
     margin: 0 5rem;
+    transition: all 0.5s;
 }
 
-.helppic:active {
+.helppic:hover {
     transform: scale(1.5);
     background-color: rgba(32, 32, 32, 0.329);
 }
