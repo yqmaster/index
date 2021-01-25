@@ -1,3 +1,40 @@
+@media only screen and (min-width: 200px){
+    html {
+        font-size: 3px !important; 
+    }
+}
+@media only screen and (min-width: 300px){
+    html {
+        font-size: 4px !important; 
+    }
+}
+@media only screen and (min-width: 400px){
+    html {
+        font-size: 5px !important; 
+    }
+}
+@media only screen and (min-width: 500px){
+    html {
+        font-size: 6px !important;
+    }
+}
+@media only screen and (min-width: 600px){
+    html {
+        font-size: 7px !important;
+    }
+}
+@media only screen and (min-width: 700px){
+    html {
+        font-size: 8px !important; 
+    }
+}
+@media only screen and (min-width: 800px){
+    html {
+        font-size: 9px !important; 
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +46,13 @@ li {
 
 html {
     background-color: #fafafa;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -0.30em;
+    vertical-align: -0.30rem;
     fill: currentColor;
     overflow: hidden;
 }
@@ -25,9 +62,9 @@ html {
 }
 
 .picicon {
-    width: 1.8em;
-    height: 1.8em;
-    margin: -0.5em 0;
+    width: 5rem;
+    height: 5rem;
+    margin: -1rem 0;
 }
 
 header {
@@ -35,16 +72,16 @@ header {
     position: sticky;
     top: 0;
     background-color: #E382A3;
-    height: 2.5em;
-    padding: 0 1em;
+    height: 15rem;
+    padding: 0 7rem;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    font-size: 5em;
+    font-size: 5rem;
     color: #fafafa;
-    letter-spacing: 0.2em;
+    letter-spacing: 1.5rem;
 }
 
 .feijiicon {
@@ -52,82 +89,83 @@ header {
 }
 
 .choose {
-    height: 2em;
-    font-size: 5em;
+    height: 12rem;
+    font-size: 5rem;
     background-color: #ffffff;
     color: gray;
 
-    margin: 1em 2em;
-    padding: 0.5em 1em;
+    margin: 5rem 10rem;
+    padding: 2rem 3rem 4rem ;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    letter-spacing: 0.5em;
+    align-items:center;
+    letter-spacing: 1.3rem;
 }
 
 .choose .box {
-    height: 2em;
-    width: 5em;
-    line-height: 2em;
+    height: 10rem;
+    width: 25rem;
+    line-height: 10rem;
     text-align: center;
 }
 
 .choose .line {
-    height: 0.01em;
-    width: 4em;
-    margin-left: 0.2em;
+    height: 0.1rem;
+    width: 21rem;
+    margin-left: 2rem;
     background-color: gray;
 }
 
 .choise {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 
-    font-size: 2.5em;
-    line-height: 2em;
-    letter-spacing: 0.1em;
+    font-size: 3rem;
+    line-height: 5rem;
+    letter-spacing: 0.3rem;
 }
 
 .content .box {
-    margin: 1.3em auto;
-    padding: 1em 2.5em;
+    margin: 4rem auto;
+    padding: 4rem 8rem;
     background-color: #ffffff;
-    border-radius: 0.5em;
-    box-shadow: 0em 0.5em 1em -1.1em #cfcfcf;
+    border-radius: 1.5rem;
+    box-shadow: 0rem 1rem 2rem -1.2rem #cfcfcf;
 
     transition: all 1s;
 }
 
 .content .box:hover {
-    border-radius: 1em;
+    border-radius: 3rem;
     transform: scale(1.05);
-    box-shadow: 0em 0.5em 1em -0.7em #535353;
+    box-shadow: 0rem 1rem 3rem -2rem #535353;
 }
 
 button {
     background-color: #E382A3;
-    height: 2.5em;
+    height: 8rem;
 
-    padding: 0 1em;
-    margin: 0em 1em 0.5em 0em;
+    padding: 0 4rem;
+    margin: -0.5rem 0rem 2rem 0rem;
 
     outline-style: none;
     border-style: none;
-    border-radius: 2em;
-    box-shadow: 0em 0em 0.5em -0.1em #E382A3;
+    border-radius: 4rem;
+    box-shadow: 0rem 0rem 1.8rem -0.4rem #E382A3;
 
-    font-size: 1em;
+    font-size: 3rem;
     color: #ffffff;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.5rem;
     transition: all 0.5s;
 }
 
-button:focus {
+button:active {
     background-color: #D9507E;
 }
 
+
 .helppic {
     width: 85%;
-    max-width: 30em;
-    margin: 0 1em;
+    max-width: 70rem;
+    margin: 0 4rem;
 }
