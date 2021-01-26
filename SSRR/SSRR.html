@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="SSRR.css">
     <script src="../iconfont.js"></script>
     <script>
-        function copypcmima() {
-            var copyDom = document.querySelector('#pcmima');
+        function copypcmimaone() {
+            var copyDom = document.querySelector('#pcmima1');
             //创建选中范围
             var range = document.createRange();
             range.selectNode(copyDom);
@@ -21,29 +21,70 @@
             var successful = document.execCommand('copy');
             try {
                 var msg = successful ? "successful" : "failed";
-                document.getElementById("mimaxianshi").innerHTML = "复制成功！";
+                document.getElementById("mimaxianshi1").innerHTML = "复制成功！";
             } catch (err) {
-                document.getElementById("mimaxianshi").innerHTML = "复制失败";
+                document.getElementById("mimaxianshi1").innerHTML = "复制失败";
             }
         }
 
-        function copydingyue() {
-            var copyDom = document.querySelector('#dingyue');
-            //创建选中范围
+        function copypcmimatwo() {
+            var copyDom = document.querySelector('#pcmima2');
             var range = document.createRange();
             range.selectNode(copyDom);
-            //移除剪切板中内容
             window.getSelection().removeAllRanges();
-            //添加新的内容到剪切板
             window.getSelection().addRange(range);
-            //复制
             var successful = document.execCommand('copy');
             try {
                 var msg = successful ? "successful" : "failed";
-                document.getElementById("dingyuexianshi").innerHTML = "复制成功！";
+                document.getElementById("mimaxianshi2").innerHTML = "复制成功！";
             } catch (err) {
-                document.getElementById("dingyuexianshi").innerHTML = "复制失败";
+                document.getElementById("mimaxianshi2").innerHTML = "复制失败";
             }
+        }
+
+        function copydingyueone() {
+            var copyDom = document.querySelector('#dingyue1');
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("dingyuexianshi1").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("dingyuexianshi1").innerHTML = "复制失败";
+            }
+        }
+
+        function copydingyuetwo() {
+            var copyDom = document.querySelector('#dingyue2');
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("dingyuexianshi2").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("dingyuexianshi2").innerHTML = "复制失败";
+            }
+        }
+
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                document.getElementById("one").className = "choose chooses1";
+            }
+            tablinks = document.getElementsByClassName("chooseduan");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
     </script>
 
@@ -56,20 +97,17 @@
             <use xlink:href="#icon-feiji"></use>
         </svg>
     </header>
-    <div class="choose">
-        <div class="box">
-            手机端
-            <div class="line"></div>
-        </div>
-        <div class="box">
-            PC端
-            <div class="line"></div>
-        </div>
+
+    <div class="choose chooses" id="one">
+        <button class="box chooseshouji chooseduan" onclick="openCity(event, 'yidongduan')">PC端</button>
+        <button class="box choosepc chooseduan" onclick="openCity(event, 'pcduan')">手机端</button>
+        <button class="box choosepc chooseduan" onclick="openCity(event, 'jichangdingyue')">机场订阅</button>
     </div>
 
     <div class="choise">
-        <div class="title">详细步骤：</div>
-        <ul class="content">
+
+        <ul class="content" id="yidongduan">
+            <div class="title">PC端详细步骤：</div>
             <li class="box">
                 <svg class="icon number" aria-hidden="true">
                     <use xlink:href="#icon-1_round"></use>
@@ -82,10 +120,10 @@
                 </a>
                 <br>
                 提取码：akso
-                <span id="pcmima" style="font-size: 0px; letter-spacing: 0ch;">akso</span>
+                <span id="pcmima1" style="font-size: 0px; letter-spacing: 0ch;">akso</span>
                 <br>
-                <button id="button" onClick="copypcmima()">点击复制提取码</button>
-                <span id="mimaxianshi"></span>
+                <button id="button" onClick="copypcmimaone()">点击复制提取码</button>
+                <span id="mimaxianshi1"></span>
             </li>
 
             <li class="box">
@@ -113,11 +151,11 @@
                     <use xlink:href="#icon-4_round"></use>
                 </svg>
                 点击下面的按钮复制订阅链接。
-                <span id="dingyue"
+                <span id="dingyue1"
                     style="font-size: 0px;letter-spacing: 0ch;">https://www.paofusub.com/link/1LKYafHP9m8LL1Ct?sub=1</span>
                 <br>
-                <button id="button" onClick="copydingyue()">点击复制订阅链接</button>
-                <span id="dingyuexianshi"></span>
+                <button id="button" onClick="copydingyueone()">点击复制订阅链接</button>
+                <span id="dingyuexianshi1"></span>
             </li>
 
             <li class="box">
@@ -208,14 +246,132 @@
             </li>
         </ul>
 
+        <ul class="content" id="pcduan">
+            <div class="title">手机端详细步骤：</div>
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-1_round"></use>
+                </svg>
+                点击下载 SSR.apk
+                <span style="font-size: 0px; letter-spacing: 0ch;"></span>
+                <br>
+                <a href="https://yqmaster.lanzous.com/iYS5ckphufc?p">
+                    <button> 蓝奏云链接</button>
+                </a>
+                <br>
+                提取码：5148
+                <span id="pcmima2" style="font-size: 0px; letter-spacing: 0ch;">5148</span>
+                <br>
+                <button id="button" onClick="copypcmimatwo()">点击复制提取码</button>
+                <span id="mimaxianshi2"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-2_round"></use>
+                </svg>
+                点击下面的按钮复制订阅链接。
+                <span id="dingyue2"
+                    style="font-size: 0px;letter-spacing: 0ch;">https://www.paofusub.com/link/1LKYafHP9m8LL1Ct?sub=1</span>
+                <br>
+                <button id="button" onClick="copydingyuetwo()">点击复制订阅链接</button>
+                <span id="dingyuexianshi2"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-3_round"></use>
+                </svg>
+                打开ShadowsocksR客户端
+                <img class="picicon" src="图片\imgicon.svg" alt="">
+                <br>
+                点击左上角shadowsocksR图标
+                <img class="helppic" src="图片\img3-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-4_round"></use>
+                </svg>
+                点击右下角「 + 」弹出菜单，
+                <br>
+                然后点击「添加/升级 SSR 订阅」。
+                <img class="helppic" src="图片\img4-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-5_round"></use>
+                </svg>
+                点击「添加订阅地址」。
+                <br>
+                <img class="helppic" src="图片\img5-1.png" alt="">
+                <br>
+                把刚刚复制的订阅连接粘贴，进去然后点击「确定」。
+                <img class="helppic" src="图片\img5-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-6_round"></use>
+                </svg>
+                过段时间后出现「泡芙云」订阅节点组，如果没出现，可以多试几次。
+                <br>
+                点击开启自动更新，然后点击「确定并升级」。
+                <br>
+                <img class="helppic" src="图片\img6-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-7_round"></use>
+                </svg>
+                更新完成后，点击选择一条想用的节点，返回到主页面。
+                <br>
+                <img class="helppic" src="图片\img7-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-8_round"></use>
+                </svg>
+                然后下滑到「功能设置」功能区。
+                <br>
+                <img class="helppic" src="图片\img8-1.png" alt="">
+                <br>
+                将「路由」设置为「绕过局域网和中国大陆地址」
+                <br>
+                <img class="helppic" src="图片\img8-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-9_round"></use>
+                </svg>
+                点击右上角小飞机图标启动代理即可使用
+                <br>
+                （ 如果是首次连接，则系统会弹出建立网络连接提示框，请点击「确定」。）
+                <br>
+                <img class="helppic" src="图片\img9-1.png" alt="">
+            </li>
+        </ul>
+
+        <ul class="content" id="jichangdingyue">
+            <div class="title">关于机场订阅：</div>
+            <li class="box">
+                什么是机场？
+            </li>
+
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <a href="https://debugtbs.qq.com">调试页面</a>
+            <br><br><br><br><br><br><br><br>
+        </ul>
     </div>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <a href="debugtbs.qq.com">调试页面</a>
-    <br><br><br><br><br><br><br><br>
+
 
 
 </body>
