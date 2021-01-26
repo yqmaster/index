@@ -1,45 +1,3 @@
-@media only screen and (min-width: 200px) {
-    html {
-        font-size: 3px !important;
-    }
-}
-
-@media only screen and (min-width: 300px) {
-    html {
-        font-size: 4px !important;
-    }
-}
-
-@media only screen and (min-width: 400px) {
-    html {
-        font-size: 5px !important;
-    }
-}
-
-@media only screen and (min-width: 500px) {
-    html {
-        font-size: 6px !important;
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    html {
-        font-size: 7px !important;
-    }
-}
-
-@media only screen and (min-width: 700px) {
-    html {
-        font-size: 8px !important;
-    }
-}
-
-@media only screen and (min-width: 800px) {
-    html {
-        font-size: 9px !important;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -51,13 +9,16 @@ li {
 
 html {
     background-color: #fafafa;
-    font-size: 8px;
+}
+
+p {
+    font-size: 4vw;
 }
 
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -1rem;
+    vertical-align: -1vw;
     fill: currentColor;
     overflow: hidden;
 }
@@ -67,9 +28,9 @@ html {
 }
 
 .picicon {
-    width: 5rem;
-    height: 5rem;
-    margin: -1.5rem 0;
+    width: 5vw;
+    height: 5vw;
+    margin: -1.5vw 0;
 }
 
 header {
@@ -78,15 +39,15 @@ header {
     top: 0;
     background-color: #E382A3;
     height: 18vw;
-    padding: 0 7rem;
+    padding: 0 6vw;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    font-size: 5rem;
+    font-size: 6vw;
     color: #fafafa;
-    letter-spacing: 1.5rem;
+    letter-spacing: 2vw;
 }
 
 .feijiicon {
@@ -144,9 +105,9 @@ header {
 }
 
 .chooses1 {
-    height: 20rem;
+    height: 20vw;
     width: 100%;
-    margin: 3rem auto;
+    margin: 3vw auto;
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -156,11 +117,11 @@ header {
 }
 
 .chooses {
-    height: 80rem;
+    height: 60vw;
     width: 50%;
     margin: 0 auto;
-    transform: scale(1.5) translatey(15em);
-    background-color: #fafafa;
+    transform: scale(1.5) translatey(20vw);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -171,25 +132,25 @@ header {
     background-color: #E382A3;
     outline-style: none;
     border-style: none;
-    border-radius: 5rem;
-    box-shadow: 0rem 0rem 1rem 0.1rem #E382A3;
+    border-radius: 5vw;
+    box-shadow: 0vw 0vw 1vw 0.1vw #E382A3;
 
-    font-size: 4rem;
+    font-size: 4vw;
     color: #ffffff;
-    letter-spacing: 1rem;
+    letter-spacing: 1vw;
     transition: all 0.1s;
     transition-delay: initial;
 }
 
 .choose button:active {
     background-color: #fad9e4;
-    box-shadow: 0rem 0rem 1rem 0.1rem #fad9e4;
+    box-shadow: 0vw 0vw 1vw 0.1vw #fad9e4;
 }
 
 .choose .box {
-    height: 10rem;
-    width: 27rem;
-    line-height: 10rem;
+    height: 10vw;
+    width: 27vw;
+    line-height: 10vw;
     text-align: center;
 }
 
@@ -201,12 +162,12 @@ header {
 @keyframes fadeEffect {
     from {
         opacity: 0;
-        transform: translateX(40rem);
+        transform: translateX(40vw);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0rem);
+        transform: translateX(0vw);
     }
 }
 
@@ -214,42 +175,42 @@ header {
     width: 85%;
     margin: 0 auto;
 
-    font-size: 3rem;
-    line-height: 5rem;
-    letter-spacing: 0.3rem;
+    line-height: 5vw;
+    letter-spacing: 0.3vw;
 }
 
 .content .box {
-    margin: 4rem auto;
-    padding: 4rem 8rem;
+    margin: 4vw auto;
+    padding: 4vw 8vw;
     background-color: #ffffff;
-    border-radius: 1.5rem;
-    box-shadow: 0rem 1rem 2rem -1.2rem #cfcfcf;
+    border-radius: 1.5vw;
+    box-shadow: 0vw 1vw 2vw -1.2vw #cfcfcf;
+    font-size: 3.3vw;
 
     transition: all 1s;
 }
 
 .content .box:hover {
-    border-radius: 3rem;
+    border-radius: 3vw;
     transform: scale(1.05);
-    box-shadow: 0rem 1rem 3rem -2rem #535353;
+    box-shadow: 0vw 1vw 3vw -2vw #535353;
 }
 
 .choise button {
     background-color: #E382A3;
-    height: 8rem;
+    height: 8vw;
 
-    padding: 0 4rem;
-    margin: -0.5rem 0rem 2rem 0rem;
+    padding: 0 4vw;
+    margin: -0.5vw 0vw 2vw 0vw;
 
     outline-style: none;
     border-style: none;
-    border-radius: 4rem;
-    box-shadow: 0rem 0rem 1.8rem -0.4rem #E382A3;
+    border-radius: 4vw;
+    box-shadow: 0vw 0vw 1.8vw -0.4vw #E382A3;
 
-    font-size: 3rem;
+    font-size: 3vw;
     color: #ffffff;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.5vw;
     transition: all 0.5s;
 }
 
@@ -258,19 +219,20 @@ header {
 }
 
 
+
 .helppic {
     z-index: 2;
     width: 85%;
-    max-width: 70rem;
-    margin: 0 5rem;
+    max-width: 70vw;
+    margin: 0 5vw;
     transition: all 0.5s;
 }
 
 .helppic:hover {
     transform: scale(1.5);
     border-style: solid;
-    border-width: 1rem;
-    border-radius: 1rem;
+    border-width: 1vw;
+    border-radius: 1vw;
     border-color: rgba(0, 0, 0, 0);
     background-color: rgba(32, 32, 32, 0.808);
 }
