@@ -12,19 +12,24 @@ html {
 }
 
 p {
-    font-size: 4vw;
+    font-size: 3.5vw;
+}
+
+button {
+    outline-style: none;
+    border-style: none;
 }
 
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -1vw;
+    vertical-align: -1.2vw;
     fill: currentColor;
     overflow: hidden;
 }
 
 .number {
-    transform: scale(1.4);
+    transform: scale(1.1);
 }
 
 .picicon {
@@ -39,7 +44,7 @@ header {
     top: 0;
     background-color: #E382A3;
     height: 18vw;
-    padding: 0 6vw;
+    padding: 0 7vw;
 
     display: flex;
     justify-content: space-between;
@@ -47,11 +52,12 @@ header {
 
     font-size: 6vw;
     color: #fafafa;
-    letter-spacing: 2vw;
+    letter-spacing: 1.3vw;
 }
 
 .feijiicon {
     transform: rotatey(180deg) scale(0.8);
+    transition: all 1s;
 }
 
 .feijiicon:hover {
@@ -104,50 +110,49 @@ header {
     }
 }
 
-.chooses1 {
-    height: 20vw;
-    width: 100%;
-    margin: 3vw auto;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    transition: all 0.5s;
-}
-
 .chooses {
-    height: 60vw;
-    width: 50%;
+    height: 50vh;
+    width: 60%;
     margin: 0 auto;
-    transform: scale(1.5) translatey(20vw);
-    background-color: #ffffff;
+    transform: scale(1.6) translatey(10vh);
+    background-color: #fafafa;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
+.chooses1 {
+    height: 20vw;
+    width: 90vw;
+    margin: 3vw auto;
+    padding: 0vw 5vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.8s;
+}
+
 .choose button {
     background-color: #E382A3;
-    outline-style: none;
-    border-style: none;
     border-radius: 5vw;
-    box-shadow: 0vw 0vw 1vw 0.1vw #E382A3;
+    box-shadow: 0vw 0vw 2vw -0.3vw #E382A3;
 
     font-size: 4vw;
     color: #ffffff;
     letter-spacing: 1vw;
-    transition: all 0.1s;
-    transition-delay: initial;
+    transition: all 0.4s;
 }
 
-.choose button:active {
-    background-color: #fad9e4;
-    box-shadow: 0vw 0vw 1vw 0.1vw #fad9e4;
+.choose button:hover {
+    transform: scale(1.15);
+    box-shadow: 0vw 0vw 1vw 0.4vw #E382A3;
 }
 
-.choose .box {
+.choose .chooseduan {
     height: 10vw;
     width: 27vw;
     line-height: 10vw;
@@ -156,34 +161,34 @@ header {
 
 .content {
     display: none;
-    animation: fadeEffect 0.5s;
+    animation: fadeEffect 0.6s;
 }
 
 @keyframes fadeEffect {
     from {
         opacity: 0;
-        transform: translateX(40vw);
+        transform: translateY(60vw);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0vw);
+        transform: translateY(0vw);
     }
 }
 
 .choise {
-    width: 85%;
+    width: 85vw;
     margin: 0 auto;
 
     line-height: 5vw;
-    letter-spacing: 0.3vw;
+    letter-spacing: 0.1vw;
 }
 
 .content .box {
     margin: 4vw auto;
-    padding: 4vw 8vw;
+    padding: 4vw 6vw;
     background-color: #ffffff;
-    border-radius: 1.5vw;
+    border-radius: 1vw;
     box-shadow: 0vw 1vw 2vw -1.2vw #cfcfcf;
     font-size: 3.3vw;
 
@@ -192,19 +197,17 @@ header {
 
 .content .box:hover {
     border-radius: 3vw;
-    transform: scale(1.05);
-    box-shadow: 0vw 1vw 3vw -2vw #535353;
+    transform: scale(1.06);
+    box-shadow: 0vw 1vw 3vw -2vw #444444;
 }
 
 .choise button {
     background-color: #E382A3;
     height: 8vw;
 
-    padding: 0 4vw;
+    padding: 0 3vw;
     margin: -0.5vw 0vw 2vw 0vw;
 
-    outline-style: none;
-    border-style: none;
     border-radius: 4vw;
     box-shadow: 0vw 0vw 1.8vw -0.4vw #E382A3;
 
@@ -216,11 +219,10 @@ header {
 
 .choise button:active {
     background-color: #D9507E;
+    transition-delay: initial;
 }
 
-
-
-.helppic {
+.helppic,helppicbig {
     z-index: 2;
     width: 85%;
     max-width: 70vw;
@@ -229,7 +231,7 @@ header {
 }
 
 .helppic:hover {
-    transform: scale(1.5);
+    transform: scale(1.4);
     border-style: solid;
     border-width: 1vw;
     border-radius: 1vw;
