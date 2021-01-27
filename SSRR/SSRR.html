@@ -72,7 +72,7 @@
             }
         }
 
-        function openCity(evt, cityName) {
+        function openCity(evt, ChoiseName, ChooseName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("content");
             for (i = 0; i < tabcontent.length; i++) {
@@ -83,7 +83,7 @@
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(cityName).style.display = "block";
+            document.getElementById(ChoiseName).style.display = "block";
             evt.currentTarget.className += " active";
         }
     </script>
@@ -99,14 +99,20 @@
     </header>
 
     <div class="choose chooses" id="one">
-        <button class="box chooseshouji chooseduan" onclick="openCity(event, 'yidongduan')">PC端</button>
-        <button class="box choosepc chooseduan" onclick="openCity(event, 'pcduan')">手机端</button>
-        <button class="box choosepc chooseduan" onclick="openCity(event, 'jichangdingyue')">机场订阅</button>
+        <button class="chooseshouji chooseduan" onclick="openCity(event, 'yidongduan')">
+            手机端
+        </button>
+        <button class="choosepc chooseduan" onclick="openCity(event, 'pcduan')">
+            PC端
+        </button>
+        <button class="choosepc chooseduan" onclick="openCity(event, 'jichangdingyue')">
+            机场订阅
+        </button>
     </div>
 
     <div class="choise">
 
-        <ul class="content" id="yidongduan">
+        <ul class="content" id="pcduan">
             <p class="title">PC端详细步骤：</p>
             <li class="box">
                 <svg class="icon number" aria-hidden="true">
@@ -143,7 +149,7 @@
                 <br>
                 右键点击“服务器订阅”-“SSR服务器订阅设置...”。
                 <br>
-                <img class="helppic" src="图片\pic3-1.png" alt="">
+                <img class="helppicbig" src="图片\pic3-1.png" alt="">
             </li>
 
             <li class="box">
@@ -199,14 +205,14 @@
                 </svg>
                 在「服务器」选项中选择「更新 SSR 服务器订阅」。
                 <br>
-                <img class="helppic" src="图片\pic6-1.png" alt="">
+                <img class="helppicbig" src="图片\pic6-1.png" alt="">
                 <br>&nbsp
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-2_square"></use>
                 </svg>
                 一小段时间后（具体时间取决于网络环境），收到「服务器订阅更新成功」的通知消息。
                 <br>
-                <img class="helppic" src="图片\pic6-2.png" alt="">
+                <img class="helppicbig" src="图片\pic6-2.png" alt="">
             </li>
 
             <li class="box">
@@ -222,7 +228,7 @@
                 </svg>
                 在「代理规则」中选择「绕过局域网和大陆」。
                 <br>
-                <img class="helppic" src="图片\pic7-1.png" alt="">
+                <img class="helppicbig" src="图片\pic7-1.png" alt="">
                 <br>&nbsp
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-icon-test
@@ -230,7 +236,7 @@
                 </svg>
                 在「系统代理模式」中选择「全局」。
                 <br>
-                <img class="helppic" src="图片\pic7-2.png" alt="">
+                <img class="helppicbig" src="图片\pic7-2.png" alt="">
             </li>
 
             <li class="box">
@@ -246,8 +252,8 @@
             </li>
         </ul>
 
-        <ul class="content" id="pcduan">
-            <div class="title">手机端详细步骤：</div>
+        <ul class="content" id="yidongduan">
+            <p class="title">手机端详细步骤：</p>
             <li class="box">
                 <svg class="icon number" aria-hidden="true">
                     <use xlink:href="#icon-1_round"></use>
@@ -286,7 +292,7 @@
                 <img class="picicon" src="图片\imgicon.svg" alt="">
                 <br>
                 点击左上角shadowsocksR图标
-                <img class="helppic" src="图片\img3-1.png" alt="">
+                <img class="helppicbig" src="图片\img3-1.png" alt="">
             </li>
 
             <li class="box">
@@ -296,7 +302,7 @@
                 点击右下角「 + 」弹出菜单，
                 <br>
                 然后点击「添加/升级 SSR 订阅」。
-                <img class="helppic" src="图片\img4-1.png" alt="">
+                <img class="helppicbig" src="图片\img4-1.png" alt="">
             </li>
 
             <li class="box">
@@ -305,10 +311,10 @@
                 </svg>
                 点击「添加订阅地址」。
                 <br>
-                <img class="helppic" src="图片\img5-1.png" alt="">
+                <img class="helppicbig" src="图片\img5-1.png" alt="">
                 <br>
                 把刚刚复制的订阅连接粘贴，进去然后点击「确定」。
-                <img class="helppic" src="图片\img5-2.png" alt="">
+                <img class="helppicbig" src="图片\img5-2.png" alt="">
             </li>
 
             <li class="box">
@@ -319,7 +325,7 @@
                 <br>
                 点击开启自动更新，然后点击「确定并升级」。
                 <br>
-                <img class="helppic" src="图片\img6-1.png" alt="">
+                <img class="helppicbig" src="图片\img6-1.png" alt="">
             </li>
 
             <li class="box">
@@ -328,7 +334,7 @@
                 </svg>
                 更新完成后，点击选择一条想用的节点，返回到主页面。
                 <br>
-                <img class="helppic" src="图片\img7-1.png" alt="">
+                <img class="helppicbig" src="图片\img7-1.png" alt="">
             </li>
 
             <li class="box">
@@ -337,11 +343,11 @@
                 </svg>
                 然后下滑到「功能设置」功能区。
                 <br>
-                <img class="helppic" src="图片\img8-1.png" alt="">
+                <img class="helppicbig" src="图片\img8-1.png" alt="">
                 <br>
                 将「路由」设置为「绕过局域网和中国大陆地址」
                 <br>
-                <img class="helppic" src="图片\img8-2.png" alt="">
+                <img class="helppicbig" src="图片\img8-2.png" alt="">
             </li>
 
             <li class="box">
@@ -352,14 +358,18 @@
                 <br>
                 （ 如果是首次连接，则系统会弹出建立网络连接提示框，请点击「确定」。）
                 <br>
-                <img class="helppic" src="图片\img9-1.png" alt="">
+                <img class="helppicbig" src="图片\img9-1.png" alt="">
             </li>
         </ul>
 
         <ul class="content" id="jichangdingyue">
-            <div class="title">关于机场订阅：</div>
+            <p class="title">关于机场订阅：</p>
             <li class="box">
                 什么是机场？
+                其实这个很好解释，我们常用的 SS/​SSR 都是纸飞机的图标。所以我们有时也把这类软件和他们的衍生版叫做小飞机。而机场则可以认为是提供这类软件服务的场所。大致是如此。
+            </li>
+            <li class="box">
+               <a href="https://www.duyaoss.com/archives/3/">机场推荐</a>  
             </li>
 
             <br><br><br><br><br><br><br><br>
