@@ -222,7 +222,7 @@ header {
     transition-delay: initial;
 }
 
-.helppic,helppicbig {
+.helppic,.helppicbig {
     z-index: 2;
     width: 85%;
     max-width: 70vw;
