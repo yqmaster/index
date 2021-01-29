@@ -3,10 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" id="viewportMeta">
     <link rel="shortcut icon" type="img/x-icon" href="图片\index.ico" />
     <title>Master's&nbsp主&nbsp页</title>
     <link rel="stylesheet" href="index.css">
     <script src="./iconfont.js"></script>
+    <script type="text/javascript">
+        var initViewport = function (height) {
+            var metaEl = document.querySelector("#viewportMeta");
+            var content = "height=" + height + ",width=device-width,initial-scale=1.0,user-scalable=no";
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', content);
+        }
+        var realHeight = window.innerWidth > window.innerHeight ? window.innerWidth : window.innerHeight
+        initViewport(realHeight);
+    </script>
 </head>
 
 <body>
