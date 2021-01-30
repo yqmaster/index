@@ -1,6 +1,30 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'webfont';
+    font-display: swap;
+    src: url('//at.alicdn.com/t/webfont_rs34jqgzyj.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_rs34jqgzyj.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('//at.alicdn.com/t/webfont_rs34jqgzyj.woff2') format('woff2'),
+        url('//at.alicdn.com/t/webfont_rs34jqgzyj.woff') format('woff'),
+        /* chrome、firefox */
+        url('//at.alicdn.com/t/webfont_rs34jqgzyj.ttf') format('truetype'),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url('//at.alicdn.com/t/webfont_rs34jqgzyj.svg#杨任东竹石体-Bold') format('svg');
+    /* iOS 4.1- */
+}
+
+.web-font {
+    font-family: "webfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon {
@@ -23,14 +47,14 @@ html {
 
 .welcomebox {
     background-color: rgba(209, 163, 253);
-    height: 7.5vh;
+    height: 12vw;
     overflow: hidden;
 }
 
 .welcometext {
-    font-size: 2.8vh;
+    font-size: 4.5vw;
     font-weight: 300;
-    line-height: 7.5vh;
+    line-height: 12vw;
     letter-spacing: 0.5vw;
 }
 
@@ -38,17 +62,17 @@ html {
     z-index: 100;
     position: sticky;
     top: 0vw;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(250, 250, 250, 0.7);
     backdrop-filter: saturate(180%) blur(15px);
-    -webkit-backdrop-filter: saturate(180%) blur(15px);
+
     margin: 1vw 0;
-    height: 6vh;
+    height: 9vw;
 }
 
 .titletext {
-    font-size: 3vh;
-    color: rgb(126, 126, 126);
-    line-height: 6vh;
+    font-size: 4.5vw;
+    color:rgb(80, 80, 80);
+    line-height: 9vw;
     letter-spacing: 3vw;
     padding-left: 6vw;
 }
@@ -107,27 +131,26 @@ html {
     z-index: 0;
     position: relative;
     width: 90vw;
-    height: 20vh;
+    height: 32vw;
     border-style: solid;
     border-radius: 0.5vw;
     border-color: rgb(248, 248, 248);
     border-top-color: rgba(209, 163, 253);
-    border-width: 0.5vh;
+    border-width: 0.5vw;
     background-color: rgb(248, 248, 248);
-    margin: 0 auto 4vh;
-
-    box-shadow: 0 0.3vh 1vh rgb(240, 223, 255);
+    margin: 0 auto 3vw;
+    box-shadow: 0 0vw 2vw rgb(240, 223, 255);
     transition: all 1s;
 }
 
 .searchbox:hover {
-    border-radius: 2vh;
-    box-shadow: 0 0.3vh 1vh rgb(226, 195, 255);
+    border-radius: 4vw;
+    box-shadow: 0 1vw 3vw rgb(226, 195, 255);
 }
 
 .searchboximg {
-    width: 23vh;
-    margin: auto;
+    width: 40vw;
+    margin: 0.5vw auto 0;
 }
 
 .searchboximg:hover .searchboxpic {
@@ -143,25 +166,25 @@ html {
 .searchboxform {
     position: absolute;
     width: 80vw;
-    height: 5vh;
+    height: 8vw;
     left: 5vw;
-    bottom: 1vh;
+    bottom: 2.5vw;
 }
 
 .searchboxinput {
     float: left;
-    width: 5vh;
-    height: 5vh;
-    border-radius: 2.5vh;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 4vw;
     border-style: none;
     outline-style: none;
     background-color: rgb(209, 163, 253);
     box-shadow: 0 0 1vw rgb(209, 163, 253);
 
     color: rgb(0, 0, 0, 0);
-    font-size: 3vh;
+    font-size: 3.5vw;
     text-indent: 3vw;
-    letter-spacing: 1vw;
+    letter-spacing: 0.3vw;
 
     transition-property: width, box-shadow, color, border-radius, background-color;
     transition-duration: 0.5s, 0.8s, 0.5s, 0.8s, 0.8s;
@@ -172,32 +195,30 @@ html {
     color: gray;
     box-shadow: 0 0 1vh rgb(209, 163, 253);
     background-color: rgb(248, 248, 248);
-    border-radius: 2.5vh;
 }
 
 .sousuoicon {
     float: left;
     display: block;
-    height: 4vh;
     color: gray;
 
-    font-size: 4vh;
-    margin-top: 0.5vh;
-    margin-left: -4.5vh;
+    font-size: 6vw;
+    margin-top: 1vw;
+    margin-left: -7vw;
     pointer-events: none;
 }
 
 .searchtext {
     z-index: -1;
     position: relative;
-    top: -4vh;
+    top: -6vw;
     left: 12vw;
     clear: both;
     /*不受浮动元素影响*/
     float: left;
-    color: gray;
-    line-height: 3vh;
-    font-size: 2.5vh;
+    color: rgb(80, 80, 80);
+    line-height: 3.5vw;
+    font-size: 3.5vw;
     letter-spacing: 1vw;
     transition: color 0.2s;
 }
@@ -222,28 +243,30 @@ html {
 }
 
 .litlebox {
-    box-shadow: 0px 0px 10px rgb(226, 195, 255);
+    box-shadow: 0px 0px 1vw rgb(112, 112, 112);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 22vw;
-    margin: 1vh 1vw;
-    height: 31vw;
-    font-size: 4vw;
-    line-height: 8vw;
+    margin: 1vw 1vw;
+    height: 29.6vw;
 }
 
 .smttext {
-    letter-spacing: 1vw;
+    font-size: 3.8vw;
+    line-height: 8vw;
+    letter-spacing: 0.5vw;
     width: 100%;
-    background-color: #dddddd;
-    border-bottom: solid 3px gray;
+    color: #333333;
+    background-color: #eeeeee;
+    border-bottom: solid 0.1vw gray;
 }
 
 .boxpic {
     width: 20vw;
-    padding: 1.5vw 1vw;
+    padding: 0.5vw 1vw 1vw;
     transition: all 0.5s cubic-bezier(0.74, -1.92, 0, 2.78);
 }
 
@@ -263,9 +286,9 @@ html {
 .toolsboxs {
     position: relative;
     width: 45vw;
-    height: 240px;
-    margin: 1vh 1vw;
-    border-radius: 15px;
+    height: 25vw;
+    margin: 0.8vw 1vw;
+    border-radius: 1vw;
     transition-property: all;
     transition-duration: 0.5s;
 }
@@ -347,108 +370,4 @@ html {
             rgba(255, 162, 193, 0.8)20%,
             rgba(255, 162, 193, 0.9)50%,
             rgb(255, 162, 193)70%);
-}
-
-.line3 {
-    width: 95%;
-    height: 440px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.flowbox {
-    float: left;
-    margin-top: 20px;
-    width: 25%;
-    height: 400px;
-
-    transition: all;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s;
-}
-
-.line3:hover .flowbox {
-    width: 10%;
-}
-
-.line3 .flowbox:hover {
-    margin-top: 0px;
-    width: 68%;
-    height: 440px;
-    box-shadow: 5px 7px 20px rgb(219, 219, 219);
-}
-
-#flowbox1 {
-    background-color: rgb(220, 255, 64);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox1:hover {
-    background-color: rgb(252, 255, 241);
-}
-
-#flowbox2 {
-    background-color: rgb(255, 239, 93);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox2:hover {
-    background-color: rgb(255, 254, 244);
-}
-
-#flowbox3 {
-    background-color: rgb(235, 138, 255);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox3:hover {
-    background-color: rgb(253, 246, 255);
-}
-
-#flowbox4 {
-    background-color: rgb(176, 147, 255);
-    transition: background-color, 0.5s;
-}
-
-.line3 #flowbox4:hover {
-    background-color: rgb(249, 247, 255);
-}
-
-.line3 center {
-    color: rgb(78, 78, 78);
-    font-size: 40px;
-    font-weight: lighter;
-    line-height: 50px;
-    width: 50px;
-    height: 300px;
-    writing-mode: vertical-lr;
-    margin: 60px auto;
-    letter-spacing: 40px;
-
-    transition: all;
-    transition-duration: 0.5s;
-}
-
-.line3 .flowbox:hover center {
-    margin: 80px auto;
-    opacity: 0;
-}
-
-.line3 p {
-    font-size: 20px;
-    width: 80%;
-    height: 350px;
-    margin-top: -400px;
-    margin-left: 10%;
-    letter-spacing: 2px;
-    line-height: 40px;
-    overflow: hidden;
-    opacity: 0;
-}
-
-.line3 .flowbox:hover p {
-    opacity: 1;
-    transition: all;
-    transition-delay: 0.5s;
-    transition-duration: 0.8s;
 }
