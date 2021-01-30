@@ -3,30 +3,6 @@
     padding: 0;
 }
 
-@font-face {
-    font-family: 'webfont';
-    font-display: swap;
-    src: url('//at.alicdn.com/t/webfont_rs34jqgzyj.eot');
-    /* IE9*/
-    src: url('//at.alicdn.com/t/webfont_rs34jqgzyj.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('//at.alicdn.com/t/webfont_rs34jqgzyj.woff2') format('woff2'),
-        url('//at.alicdn.com/t/webfont_rs34jqgzyj.woff') format('woff'),
-        /* chrome、firefox */
-        url('//at.alicdn.com/t/webfont_rs34jqgzyj.ttf') format('truetype'),
-        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-        url('//at.alicdn.com/t/webfont_rs34jqgzyj.svg#杨任东竹石体-Bold') format('svg');
-    /* iOS 4.1- */
-}
-
-.web-font {
-    font-family: "webfont" !important;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .icon {
     width: 1em;
     height: 1em;
@@ -52,10 +28,9 @@ html {
 }
 
 .welcometext {
-    font-size: 4.5vw;
-    font-weight: 300;
+    font-size: 4.8vw;
     line-height: 12vw;
-    letter-spacing: 0.5vw;
+    letter-spacing: 0.2vw;
 }
 
 .titlebox {
@@ -218,8 +193,8 @@ html {
     float: left;
     color: rgb(80, 80, 80);
     line-height: 3.5vw;
-    font-size: 3.5vw;
-    letter-spacing: 1vw;
+    font-size: 4vw;
+    letter-spacing: 0.8vw;
     transition: color 0.2s;
 }
 
@@ -320,7 +295,7 @@ html {
     margin-top: 5px;
     line-height: 30px;
     color: rgb(235, 235, 235);
-    font-size: 25px;
+    font-size: 22px;
     font-weight: lighter;
     letter-spacing: 2px;
 }
