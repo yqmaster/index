@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="SSRR.css">
     <script src="../iconfont.js"></script>
-    <script>
+    <script type="text/javascript" src="../ziti.js"></script>
+    <script type="text/javascript">
+        $webfont.load("body", "149b8d65167a45819fbca098a259a662", "jdzhonyuanjian");
+        $webfont.load("button", "149b8d65167a45819fbca098a259a662", "jdzhonyuanjian");
+        /*．．．*/
+        $webfont.draw();
+
         function copypcmimaone() {
             var copyDom = document.querySelector('#pcmima1');
             //创建选中范围
@@ -87,10 +93,9 @@
             evt.currentTarget.className += " active";
         }
     </script>
-
 </head>
 
-<body class="web-font">
+<body>
     <header>
         <div>SSRR使用教程</div>
         <svg class="icon feijiicon" aria-hidden="true">
