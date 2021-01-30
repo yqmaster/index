@@ -7,9 +7,16 @@
     <title>Master's&nbsp主&nbsp页</title>
     <link rel="stylesheet" href="index.css">
     <script src="./iconfont.js"></script>
+    <script type="text/javascript" src="ziti.js"></script>
+    <script type="text/javascript">
+        $webfont.load("body", "149b8d65167a45819fbca098a259a662", "jdzhonyuanjian");
+        /*$webfont.load("#id1,.class1,h1", "149b8d65167a45819fbca098a259a662", "jdzhonyuanjian");*/
+        /*．．．*/
+        $webfont.draw();
+    </script>
 </head>
 
-<body class="web-font">
+<body>
 
     <div class="welcomebox">
         <center class="welcometext">欢迎来到 Master's Home</center>
@@ -71,7 +78,7 @@
             </a>
         </div>
         <form class="searchboxform" action="https://cn.bing.com/search" autocomplete="off">
-            <input class="searchboxinput" type="text" name="keyword">
+            <input class="searchboxinput" type="text" name="q">
             <svg class="icon sousuoicon" aria-hidden="true">
                 <use xlink:href="#icon-sousuo"></use>
             </svg>
