@@ -161,7 +161,7 @@ header {
 .choose .chooseduan {
     height: 10vw;
     width: 27vw;
-    line-height: 10vw;
+    line-height: 11vw;
     text-align: center;
 }
 
@@ -187,12 +187,12 @@ header {
     margin: 0 auto;
 
     line-height: 5vw;
-    letter-spacing: 0.1vw;
+    letter-spacing: 0.05vw;
 }
 
 .content .box {
     margin: 4vw auto;
-    padding: 4vw 6vw;
+    padding: 6vw 8vw;
     background-color: #ffffff;
     border-radius: 1vw;
     box-shadow: 0vw 1vw 2vw -1.2vw #cfcfcf;
@@ -211,7 +211,7 @@ header {
     background-color: #E382A3;
     height: 8vw;
 
-    padding: 0 3vw;
+    padding: 0.5vw 3vw 0;
     margin: -0.5vw 0vw 2vw 0vw;
 
     border-radius: 4vw;
@@ -219,7 +219,7 @@ header {
 
     font-size: 3vw;
     color: #ffffff;
-    letter-spacing: 0.5vw;
+    letter-spacing: 0.3vw;
     transition: all 0.5s;
 }
 
