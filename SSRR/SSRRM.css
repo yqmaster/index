@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: ziti;
+}
+
+@font-face {
+    font-family: ziti;
+    src: url('../another/ziti.ttf')
+}
+
+li {
+    list-style-type: none;
+}
+
+html {
+    background-color: #fafafa;
+}
+
+p {
+    font-size: 3.5vw;
+}
+
+button {
+    outline-style: none;
+    border-style: none;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -1.2vw;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.number {
+    transform: scale(1.1);
+}
+
+.picicon {
+    width: 5vw;
+    height: 5vw;
+    margin: -1.5vw 0;
+}
+
+header {
+    z-index: 9999;
+    position: sticky;
+    top: 0;
+    background-color: #E382A3;
+    height: 18vw;
+    padding: 0 7vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 6vw;
+    color: #fafafa;
+    letter-spacing: 1.3vw;
+}
+
+.feijiicon {
+    transform: rotatey(180deg) scale(0.8);
+    transition: all 1s;
+}
+
+.feijiicon:hover {
+    animation: iconflashone 1s linear;
+}
+
+@keyframes iconflashone {
+    0% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.8);
+    }
+
+    10% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.5);
+    }
+
+    20% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.6);
+    }
+
+    30% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(0.8);
+    }
+
+    40% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(1.2);
+    }
+
+    50% {
+        transform: rotatey(180deg) rotateZ(-15deg) scale(1.8);
+    }
+
+    60% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(2.0);
+    }
+
+    70% {
+        transform: rotatey(180deg) rotateZ(-15deg) scale(2.0);
+    }
+
+    80% {
+        transform: rotatey(180deg) rotateZ(15deg) scale(1.6);
+    }
+
+    90% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(1.0);
+    }
+
+    100% {
+        transform: rotatey(180deg) rotateZ(0deg) scale(1);
+    }
+}
+
+.chooses {
+    height: 50vh;
+    width: 60%;
+    margin: 0 auto;
+    transform: scale(1.6) translatey(10vh);
+    background-color: #fafafa;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.chooses1 {
+    height: 20vw;
+    width: 90vw;
+    margin: 3vw auto;
+    padding: 0vw 5vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.8s;
+}
+
+.choose button {
+    background-color: #E382A3;
+    border-radius: 5vw;
+    box-shadow: 0vw 0vw 2vw -0.3vw #E382A3;
+
+    font-size: 4vw;
+    color: #ffffff;
+    letter-spacing: 1vw;
+    transition: all 0.4s;
+}
+
+.choose button:hover {
+    transform: scale(1.15);
+    box-shadow: 0vw 0vw 1vw 0.4vw #E382A3;
+}
+
+.choose .chooseduan {
+    height: 10vw;
+    width: 27vw;
+    line-height: 11vw;
+    text-align: center;
+}
+
+.content {
+    display: none;
+    animation: fadeEffect 0.6s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+        transform: translateY(60vw);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0vw);
+    }
+}
+
+.choise {
+    width: 85vw;
+    margin: 0 auto;
+
+    line-height: 5vw;
+    letter-spacing: 0.05vw;
+}
+
+.content .box {
+    margin: 4vw auto;
+    padding: 6vw 8vw;
+    background-color: #ffffff;
+    border-radius: 1vw;
+    box-shadow: 0vw 1vw 2vw -1.2vw #cfcfcf;
+    font-size: 3.3vw;
+
+    transition: all 1s;
+}
+
+.content .box:hover {
+    border-radius: 3vw;
+    transform: scale(1.06);
+    box-shadow: 0vw 1vw 3vw -2vw #444444;
+}
+
+.choise button {
+    background-color: #E382A3;
+    height: 8vw;
+
+    padding: 0.5vw 3vw 0;
+    margin: -0.5vw 0vw 2vw 0vw;
+
+    border-radius: 4vw;
+    box-shadow: 0vw 0vw 1.8vw -0.4vw #E382A3;
+
+    font-size: 3vw;
+    color: #ffffff;
+    letter-spacing: 0.3vw;
+    transition: all 0.5s;
+}
+
+.choise button:active {
+    background-color: #D9507E;
+    transition-delay: initial;
+}
+
+.helppic,
+.helppicbig {
+    z-index: 2;
+    width: 85%;
+    max-width: 70vw;
+    margin: 0 5vw;
+    transition: all 0.5s;
+}
+
+.helppic:hover {
+    transform: scale(1.4);
+    border-style: solid;
+    border-width: 1vw;
+    border-radius: 1vw;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(32, 32, 32, 0.808);
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SSRR&nbsp使用教程</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="SSRRM.css">
+    <script src="../another/iconfont.js"></script>
+    <script type="text/javascript">
+
+        function copypcmimaone() {
+            var copyDom = document.querySelector('#pcmima1');
+            //创建选中范围
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            //移除剪切板中内容
+            window.getSelection().removeAllRanges();
+            //添加新的内容到剪切板
+            window.getSelection().addRange(range);
+            //复制
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("mimaxianshi1").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("mimaxianshi1").innerHTML = "复制失败";
+            }
+        }
+
+        function copypcmimatwo() {
+            var copyDom = document.querySelector('#pcmima2');
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("mimaxianshi2").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("mimaxianshi2").innerHTML = "复制失败";
+            }
+        }
+
+        function copydingyueone() {
+            var copyDom = document.querySelector('#dingyue1');
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("dingyuexianshi1").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("dingyuexianshi1").innerHTML = "复制失败";
+            }
+        }
+
+        function copydingyuetwo() {
+            var copyDom = document.querySelector('#dingyue2');
+            var range = document.createRange();
+            range.selectNode(copyDom);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? "successful" : "failed";
+                document.getElementById("dingyuexianshi2").innerHTML = "复制成功！";
+            } catch (err) {
+                document.getElementById("dingyuexianshi2").innerHTML = "复制失败";
+            }
+        }
+
+        function openCity(evt, ChoiseName, ChooseName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                document.getElementById("one").className = "choose chooses1";
+            }
+            tablinks = document.getElementsByClassName("chooseduan");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(ChoiseName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>SSRR使用教程</div>
+        <svg class="icon feijiicon" aria-hidden="true">
+            <use xlink:href="#icon-feiji"></use>
+        </svg>
+    </header>
+
+    <div class="choose chooses" id="one">
+        <button class="chooseshouji chooseduan" onclick="openCity(event, 'yidongduan')">
+            手机端
+        </button>
+        <button class="choosepc chooseduan" onclick="openCity(event, 'pcduan')">
+            PC端
+        </button>
+        <button class="choosepc chooseduan" onclick="openCity(event, 'jichangdingyue')">
+            机场订阅
+        </button>
+    </div>
+
+    <div class="choise">
+
+        <ul class="content" id="pcduan">
+            <p class="title">PC端初次使用详细步骤：</p>
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-1_round"></use>
+                </svg>
+                点击下载 SSR.7z
+                <span style="font-size: 0px; letter-spacing: 0ch;"></span>
+                <br>
+                <a href="https://yqmaster.lanzous.com/tp/iUiE6kphu3a">
+                    <button> 蓝奏云链接</button>
+                </a>
+                <br>
+                提取码：akso
+                <span id="pcmima1" style="font-size: 0px; letter-spacing: 0ch;">akso</span>
+                <br>
+                <button id="button" onClick="copypcmimaone()">点击复制提取码</button>
+                <span id="mimaxianshi1"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-2_round"></use>
+                </svg>
+                解压后运行 ShadowsocksR.exe
+                <img class="picicon" src="../图片\3-5SSRR.svg" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-3_round"></use>
+                </svg>
+                在电脑右下角的状态栏里找到小飞机
+                <img class="picicon" src="图片\picicon.png" alt="">
+                <br>
+                右键点击“服务器订阅”-“SSR服务器订阅设置...”。
+                <br>
+                <img class="helppicbig" src="图片\pic3-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-4_round"></use>
+                </svg>
+                点击下面的按钮复制订阅链接。
+                <span id="dingyue1"
+                    style="font-size: 0px;letter-spacing: 0ch;">https://www.paofusub.com/link/1LKYafHP9m8LL1Ct?sub=1</span>
+                <br>
+                <button id="button" onClick="copydingyueone()">点击复制订阅链接</button>
+                <span id="dingyuexianshi1"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-5_round"></use>
+                </svg>
+                在弹出的「订阅设置」窗口中，
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-1_square"></use>
+                </svg>
+                点击「Add」按钮；
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-2_square"></use>
+                </svg>
+                在「网址」输入框中粘贴订阅地址；
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-3_square"></use>
+                </svg>
+                勾选「自动更新」；
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-4_square"></use>
+                </svg>
+                点击「确定」；
+                <br>
+                <img class="helppic" src="图片\pic5-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-6_round"></use>
+                </svg>
+                右键点击小飞机图标
+                <img class="picicon" src="图片\picicon.png" alt="">
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-1_square"></use>
+                </svg>
+                在「服务器」选项中选择「更新 SSR 服务器订阅」。
+                <br>
+                <img class="helppicbig" src="图片\pic6-1.png" alt="">
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-2_square"></use>
+                </svg>
+                一小段时间后（具体时间取决于网络环境），收到「服务器订阅更新成功」的通知消息。
+                <br>
+                <img class="helppicbig" src="图片\pic6-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-7_round"></use>
+                </svg>
+                右键点击托盘栏纸飞机图标
+                <img class="picicon" src="图片\picicon.png" alt="">
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-icon-test
+                    "></use>
+                </svg>
+                在「代理规则」中选择「绕过局域网和大陆」。
+                <br>
+                <img class="helppicbig" src="图片\pic7-1.png" alt="">
+                <br>&nbsp
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-icon-test
+                    "></use>
+                </svg>
+                在「系统代理模式」中选择「全局」。
+                <br>
+                <img class="helppicbig" src="图片\pic7-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-8_round"></use>
+                </svg>
+                右键点击小飞机
+                <img class="picicon" src="图片\picicon.png" alt="">
+                <br>
+                选择“服务器”-“泡芙云”，点击自己需要的节点即可开始使用。
+                <br>
+                <img class="helppic" src="图片\pic8-1.png" alt="">
+            </li>
+        </ul>
+
+        <ul class="content" id="yidongduan">
+            <p class="title">手机端初次使用详细步骤：</p>
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-1_round"></use>
+                </svg>
+                点击下载 SSR.apk
+                <span style="font-size: 0px; letter-spacing: 0ch;"></span>
+                <br>
+                <a href="https://yqmaster.lanzous.com/tp/iYS5ckphufc">
+                    <button> 蓝奏云链接</button>
+                </a>
+                <br>
+                提取码：5148
+                <span id="pcmima2" style="font-size: 0px; letter-spacing: 0ch;">5148</span>
+                <br>
+                <button id="button" onClick="copypcmimatwo()">点击复制提取码</button>
+                <span id="mimaxianshi2"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-2_round"></use>
+                </svg>
+                点击下面的按钮复制订阅链接。
+                <span id="dingyue2"
+                    style="font-size: 0px;letter-spacing: 0ch;">https://www.paofusub.com/link/1LKYafHP9m8LL1Ct?sub=1</span>
+                <br>
+                <button id="button" onClick="copydingyuetwo()">点击复制订阅链接</button>
+                <span id="dingyuexianshi2"></span>
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-3_round"></use>
+                </svg>
+                打开ShadowsocksR客户端
+                <img class="picicon" src="图片\imgicon.svg" alt="">
+                <br>
+                点击左上角shadowsocksR图标
+                <br>
+                <img class="helppicbig" src="图片\img3-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-4_round"></use>
+                </svg>
+                点击右下角「 + 」弹出菜单，
+                <br>
+                然后点击「添加/升级 SSR 订阅」。
+                <br>
+                <img class="helppicbig" src="图片\img4-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-5_round"></use>
+                </svg>
+                点击「添加订阅地址」。
+                <br>
+                <img class="helppicbig" src="图片\img5-1.png" alt="">
+                <br>
+                把刚刚复制的订阅连接粘贴，进去然后点击「确定」。
+                <br>
+                <img class="helppicbig" src="图片\img5-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-6_round"></use>
+                </svg>
+                过段时间后出现「泡芙云」订阅节点组，如果没出现，可以多试几次。
+                <br>
+                点击开启自动更新，然后点击「确定并升级」。
+                <br>
+                <img class="helppicbig" src="图片\img6-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-7_round"></use>
+                </svg>
+                更新完成后，点击选择一条想用的节点，返回到主页面。
+                <br>
+                <img class="helppicbig" src="图片\img7-1.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-8_round"></use>
+                </svg>
+                然后下滑到「功能设置」功能区。
+                <br>
+                <img class="helppicbig" src="图片\img8-1.png" alt="">
+                <br>
+                将「路由」设置为「绕过局域网和中国大陆地址」
+                <br>
+                <img class="helppicbig" src="图片\img8-2.png" alt="">
+            </li>
+
+            <li class="box">
+                <svg class="icon number" aria-hidden="true">
+                    <use xlink:href="#icon-9_round"></use>
+                </svg>
+                点击右上角小飞机图标启动代理即可使用
+                <br>
+                （ 如果是首次连接，则系统会弹出建立网络连接提示框，请点击「确定」。）
+                <br>
+                <img class="helppicbig" src="图片\img9-1.png" alt="">
+            </li>
+        </ul>
+
+        <ul class="content" id="jichangdingyue">
+            <p class="title">关于机场订阅：</p>
+            <li class="box">
+                <h3>什么是机场？</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                我们常用的 SS/​SSR（SSRR） 都是纸飞机的图标
+                <img class="picicon" src="../图片\3-5SSRR.svg" alt="">
+                <img class="picicon" src="图片\imgicon.svg" alt="">
+                所以我们有时也把这类软件和他们的衍生版叫做小飞机。而机场则可以认为是提供这类软件服务的场所。
+            </li>
+
+            <li class="box">
+                <h3>什么是翻墙？</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                所谓翻墙，是指绕过相应的IP封锁、内容过滤、域名劫持、流量限制等，实现对网络内容的访问。
+                <br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                比如我们想去外网查看某些♂内容，无法直接访问（被拦截），就要通过“翻墙”来进行访问。
+                <br>
+            </li>
+
+            <li class="box">
+                <h3>什么是VPN？</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                VPN（虚拟专用网络）在公用网络上建立专用网络，进行加密通讯。所谓的“翻墙”就是建立在VPN的基础之上。
+                <br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                有时候我们无法直接访问国外网站（比如Google），但是此时有一家公司A能进行访问。此时我们可以通过进入这家公司的内网，以公司的名义来间接进行对（Google）的访问。
+            </li>
+
+            <li class="box">
+                <h3>为什么要订阅机场？</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                我们需要机场提供的订阅链接来进行来连接到相关节点，完成对外网的访问。目前按本教程使用的是基于泡芙云提供的订阅链接，可同时在线设备数为2，如需长期使用，建议去订阅自己用的机场。
+            </li>
+
+            <li class="box">
+                <h3>给几个机场推荐呗？</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                下面是某位大佬写的一些机场机场测速和简介，时效性很高，但访问需要VPN。
+                <br>
+                <a href="https://www.duyaoss.com/archives/3/"><button> 机场测速和简介</button></a>
+            </li>
+
+            <li class="box">
+                <h3>其他</h3>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                机场价格有高有低，贵有贵的道理，本人目前使用的是泡芙云提供的8元/月档订阅服务，可供大家参考。
+                <br>
+                <a href="https://paofu.cloud/"><button> 泡芙云官网</button></a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
