@@ -18,7 +18,7 @@ html {
 }
 
 p {
-    font-size: 3.5vw;
+    font-size: 25px;
 }
 
 button {
@@ -29,7 +29,7 @@ button {
 .icon {
     width: 1.5em;
     height: 1.5em;
-    vertical-align: -1.2vw;
+    vertical-align: -0.4em;
     fill: currentColor;
     overflow: hidden;
 }
@@ -39,9 +39,9 @@ button {
 }
 
 .picicon {
-    width: 5vw;
-    height: 5vw;
-    margin: -1.5vw 0;
+    width: 40px;
+    height: 40px;
+    margin: -10px 0;
 }
 
 header {
@@ -49,16 +49,16 @@ header {
     position: sticky;
     top: 0;
     background-color: #E382A3;
-    height: 18vw;
-    padding: 0 7vw;
+    height: 60px;
+    padding: 0 15vw;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    font-size: 6vw;
+    font-size: 20px;
     color: #fafafa;
-    letter-spacing: 1.3vw;
+    letter-spacing: 1vw;
 }
 
 .feijiicon {
@@ -116,58 +116,72 @@ header {
     }
 }
 
-.chooses {
-    height: 50vh;
-    width: 60%;
-    margin: 0 auto;
-    transform: scale(1.6) translatey(10vh);
-    background-color: #fafafa;
-
+.choose {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    min-width: 700px;
+    max-width: 900px;
+}
+
+.chooses {
+    height: 75vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #fafafa;
+    transform: scale(1.2);
+}
+
+.chooses button {
+    border-radius: 30px;
+    height: 60px;
+    width: 220px;
+    font-size: 25px;
+    line-height: 65px;
+    margin: 0 20px;
+    transition: all 0.4s;
 }
 
 .chooses1 {
-    height: 20vw;
-    width: 90vw;
-    margin: 3vw auto;
-    padding: 0vw 5vw;
+    height: 120px;
+    width: 60vw;
+    margin: 50px auto;
+    box-shadow: 0vw 0vw 20px -10px #E382A3;
     background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     transition: all 0.8s;
+}
+
+.chooses1 button {
+    border-radius: 25px;
+    font-size: 20px;
+    height: 50px;
+    width: 180px;
+    line-height: 55px;
+    margin: 0 20px;
+    transition: all 0.4s;
 }
 
 .choose button {
     background-color: #E382A3;
-    border-radius: 5vw;
-    box-shadow: 0vw 0vw 2vw -0.3vw #E382A3;
-
-    font-size: 4vw;
+    box-shadow: 0 0 20px -3px #E382A3;
     color: #ffffff;
-    letter-spacing: 1vw;
-    transition: all 0.4s;
-}
-
-.choose button:hover {
-    transform: scale(1.15);
-    box-shadow: 0vw 0vw 1vw 0.4vw #E382A3;
-}
-
-.choose .chooseduan {
-    height: 10vw;
-    width: 27vw;
-    line-height: 11vw;
+    letter-spacing: 10px;
     text-align: center;
+}
+
+button:hover {
+    transform: scale(1.15);
+}
+
+.choose button:active {
+    background-color: #ffb4cd;
+    transition-delay: initial;
 }
 
 .content {
     display: none;
-    animation: fadeEffect 0.6s;
+    animation: fadeEffect 0.7s;
 }
 
 @keyframes fadeEffect {
@@ -183,41 +197,44 @@ header {
 }
 
 .choise {
-    width: 85vw;
+    width: 55vw;
+    min-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 100px;
 
-    line-height: 5vw;
-    letter-spacing: 0.05vw;
+    line-height: 30px;
+    letter-spacing: 2px;
 }
 
 .content .box {
-    margin: 4vw auto;
-    padding: 6vw 8vw;
+    margin: 40px auto;
+    padding: 50px 150px;
     background-color: #ffffff;
-    border-radius: 1vw;
-    box-shadow: 0vw 1vw 2vw -1.2vw #cfcfcf;
-    font-size: 3.3vw;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px -5px #cfcfcf;
+    font-size: 20px;
 
     transition: all 1s;
 }
 
 .content .box:hover {
-    border-radius: 3vw;
+    border-radius: 20px;
     transform: scale(1.06);
-    box-shadow: 0vw 1vw 3vw -2vw #444444;
+    box-shadow: 0vw 25px 30px -25px #444444;
 }
 
 .choise button {
     background-color: #E382A3;
-    height: 8vw;
+    height: 50px;
 
-    padding: 0.5vw 3vw 0;
-    margin: -0.5vw 0vw 2vw 0vw;
+    padding: 5px 30px 0;
+    margin: 5px 0 20px 40px;
 
     border-radius: 4vw;
-    box-shadow: 0vw 0vw 1.8vw -0.4vw #E382A3;
+    box-shadow: 0 0 15px -3px #E382A3;
 
-    font-size: 3vw;
+    font-size: 20px;
     color: #ffffff;
     letter-spacing: 0.3vw;
     transition: all 0.5s;
@@ -230,9 +247,12 @@ header {
 
 .helppic,
 .helppicbig {
+    border-style: solid;
+    border-width: 0;
+    border-radius: 0;
     z-index: 2;
-    width: 85%;
-    max-width: 70vw;
+    width: 60%;
+    max-width: 400px;
     margin: 0 5vw;
     transition: all 0.5s;
 }
