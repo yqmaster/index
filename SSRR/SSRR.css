@@ -187,12 +187,12 @@ button:hover {
 @keyframes fadeEffect {
     from {
         opacity: 0;
-        transform: translateY(60vw);
+        transform: translateY(100px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0vw);
+        transform: translateY(0);
     }
 }
 
