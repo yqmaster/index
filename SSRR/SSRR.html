@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <title>SSRR&nbsp使用教程</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="SSRRM.css">
+    <link rel="stylesheet" href="SSRR.css">
     <script src="../another/iconfont.js"></script>
     <script type="text/javascript">
+        if (/Android|webOS| iPhone | iPad | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(
+                navigator.userAgent)) {
+            window.location.replace("SSRRM.html");
+        }
 
         function copypcmimaone() {
             var copyDom = document.querySelector('#pcmima1');
@@ -99,13 +103,13 @@
     </header>
 
     <div class="choose chooses" id="one">
-        <button class="chooseshouji chooseduan" onclick="openCity(event, 'yidongduan')">
+        <button class="chooseduan" onclick="openCity(event, 'yidongduan')">
             手机端
         </button>
-        <button class="choosepc chooseduan" onclick="openCity(event, 'pcduan')">
+        <button class="chooseduan" onclick="openCity(event, 'pcduan')">
             PC端
         </button>
-        <button class="choosepc chooseduan" onclick="openCity(event, 'jichangdingyue')">
+        <button class="chooseduan" onclick="openCity(event, 'jichangdingyue')">
             机场订阅
         </button>
     </div>
