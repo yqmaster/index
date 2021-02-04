@@ -6,7 +6,9 @@
 
 @font-face {
     font-family: ziti;
-    src: url('another/ziti.ttf')
+    src: url("another/ziti.ttf")format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
 
 .icon {
@@ -36,7 +38,7 @@ html {
 }
 
 .welcometext {
-    font-size: 20px;
+    font-size: 28px;
     line-height: 60px;
     letter-spacing: 0.5vw;
 }
@@ -59,7 +61,7 @@ html {
     color: rgb(80, 80, 80);
     line-height: 60px;
     letter-spacing: 2vw;
-    padding-left: 10vw;
+    padding-left: 20vw;
 }
 
 .titletext:hover .icon {
@@ -115,8 +117,8 @@ html {
 .searchbox {
     z-index: 0;
     position: relative;
-    width: 80vw;
-    max-width: 1400px;
+    width: 70vw;
+    max-width: 1200px;
     min-width: 800px;
     height: 120px;
     border-style: solid;
@@ -152,8 +154,8 @@ html {
 
 .searchboxform {
     position: absolute;
-    width: 60vw;
-    max-width: 1000px;
+    width: 45vw;
+    max-width: 800px;
     height: 50px;
     left: 240px;
     bottom: 35px;
@@ -179,14 +181,16 @@ html {
 }
 
 .searchboxinput:hover {
-    width: 55vw;
+    width: 45vw;
+    max-width: 800px;
     color: gray;
     box-shadow: 0 0 15px rgb(209, 163, 253);
     background-color: rgb(248, 248, 248);
 }
 
 .searchboxinput:focus {
-    width: 55vw;
+    width: 45vw;
+    max-width: 800px;
     color: gray;
     box-shadow: 0 0 15px rgb(209, 163, 253);
     background-color: rgb(248, 248, 248);
@@ -228,10 +232,11 @@ html {
 
 .fourboxline {
     position: relative;
-    width: 80vw;
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 70vw;
+    max-width: 1200px;
     min-width: 800px;
+    margin: 0 auto;
+    padding: 0 100px;
 
     display: flex;
     justify-content: left;
@@ -278,10 +283,11 @@ html {
 }
 
 .line2 {
-    width: 80vw;
+    width: 70vw;
     min-width: 800px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 100px;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
@@ -289,9 +295,9 @@ html {
 
 .toolsboxs {
     position: relative;
-    width: 300px;
-    height: 180px;
-    margin: 8px 5px;
+    width: 250px;
+    height: 150px;
+    margin: 6px 4px;
     border-radius: 5px;
     transition-property: all;
     transition-duration: 0.5s;
@@ -305,26 +311,26 @@ html {
 .toolsboxtext {
     position: absolute;
     width: 240px;
-    height: 160px;
+    height: 150px;
     top: 15px;
     left: 30px;
 }
 
 .toolsboxtitle {
-    line-height: 40px;
+    line-height: 30px;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: normal;
     letter-spacing: 4px;
 }
 
 .toolsboxcontent {
-    width: 180px;
+    width: 160px;
     height: 100px;
     margin-top: 5px;
-    line-height: 25px;
+    line-height: 20px;
     color: rgb(235, 235, 235);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: lighter;
     letter-spacing: 1px;
 }
