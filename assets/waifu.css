@@ -7,8 +7,9 @@
 
 .waifu-tips {
     opacity: 0;
-    margin: -20px 20px;
-    padding: 5px 10px;
+    margin: 80px 20px;
+    padding: 10px 15px;
+    letter-spacing: 2px;
     border: 1px solid rgba(224, 186, 140, 0.62);
     border-radius: 12px;
     background-color: rgba(233, 191, 123, 0.5);
@@ -25,11 +26,11 @@
 
 .waifu-tool {
     display: block;
-    opacity: 1;
+    opacity: 0;
     top: 100px;
     right: 10px;
     position: absolute;
-    transition: 0.5s;
+    transition: 0.3s;
     transition-delay: 0.5s;
 }
 
