@@ -261,12 +261,22 @@
 
 @font-face {
     font-family: ziti;
-    src: url('../another/ziti.ttf')
+    src: url('../another/ziti.ttf');
+}
+
+* {
+    font-family: ziti;
+}
+
+@font-face {
+    font-family: 'Flat-UI-Icons';
+    src: url('flat-ui-icons-regular.eot');
+    src: url('flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'), url('flat-ui-icons-regular.woff') format('woff'), url('flat-ui-icons-regular.ttf') format('truetype'), url('flat-ui-icons-regular.svg#flat-ui-icons-regular') format('svg');
 }
 
 [class^="fui-"],
 [class*="fui-"] {
-    font-family: ziti;
+    font-family: 'Flat-UI-Icons';
     speak: none;
     font-style: normal;
     font-weight: normal;
