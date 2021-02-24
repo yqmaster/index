@@ -1,342 +1,405 @@
-function empty(a) {
-    return void 0 === a || null == a || "" == a
-}
+window.live2d_settings = Array(); /*
 
-function getRandText(a) {
-    return Array.isArray(a) ? a[Math.floor(Math.random() * a.length + 1) - 1] : a
-}
+    く__,.ヘヽ.　　　　/　,ー､ 〉
+    　　　　　＼ ', !-─‐-i　/　/´
+    　　　 　 ／｀ｰ'　　　 L/／｀ヽ､            Live2D 看板娘 参数设置
+    　　 　 /　 ／,　 /|　 ,　 ,　　　 ',                                           Version 1.4.2
+    　　　ｲ 　/ /-‐/　ｉ　L_ ﾊ ヽ!　 i                            Update 2018.11.12
+    　　　 ﾚ ﾍ 7ｲ｀ﾄ　 ﾚ'ｧ-ﾄ､!ハ|　 |  
+    　　　　 !,/7 '0'　　 ´0iソ| 　 |　　　
+    　　　　 |.从"　　_　　 ,,,, / |./ 　 |             网页添加 Live2D 看板娘
+    　　　　 ﾚ'| i＞.､,,__　_,.イ / 　.i 　|                    https://www.fghrsh.net/post/123.html
+    　　　　　 ﾚ'| | / k_７_/ﾚ'ヽ,　ﾊ.　|           
+    　　　　　　 | |/i 〈|/　 i　,.ﾍ |　i　|    Thanks
+    　　　　　　.|/ /　ｉ： 　 ﾍ!　　＼　|          journey-ad / https://github.com/journey-ad/live2d_src
+    　　　 　 　 kヽ>､ﾊ 　 _,.ﾍ､ 　 /､!            xiazeyu / https://github.com/xiazeyu/live2d-widget.js
+    　　　　　　 !'〈//｀Ｔ´', ＼ ｀'7'ｰr'          Live2d Cubism SDK WebGL 2.1 Projrct & All model authors.
+    　　　　　　 ﾚ'ヽL__|___i,___,ンﾚ|ノ
+    　　　　　 　　　ﾄ-,/　|___./
+    　　　　　 　　　'ｰ'　　!_,.:*********************************************************************************/
 
-function showMessage(a, c, e) {
-    (e || "" === sessionStorage.getItem("waifu-text") || null === sessionStorage.getItem("waifu-text")) && (Array.isArray(a) && (a = a[Math.floor(Math.random() * a.length + 1) - 1]), live2d_settings.showF12Message && console.log("[Message]", a.replace(/<[^<>]+>/g, "")), e && sessionStorage.setItem("waifu-text", a), $(".waifu-tips").stop(), $(".waifu-tips").html(a).fadeTo(200, 1), void 0 === c && (c = 5E3), hideMessage(c))
-}
 
-function hideMessage(a) {
-    $(".waifu-tips").stop().css("opacity", 1);
-    void 0 === a && (a = 5E3);
-    window.setTimeout(function () {
-        sessionStorage.removeItem("waifu-text")
-    }, a);
-    $(".waifu-tips").delay(a).fadeTo(2000, 0)
-}
+// 后端接口
+live2d_settings['modelAPI']             = '//live2d.fghrsh.net/api/';   // 自建 API 修改这里
+live2d_settings['tipsMessage']          = 'waifu-tips.json';            // 同目录下可省略路径
+live2d_settings['hitokotoAPI']          = 'lwl12.com';                  // 一言 API，可选 'lwl12.com', 'hitokoto.cn', 'jinrishici.com'(古诗词)
 
-function initModel(a, c) {
-    console.log(" ");
-    console.log("\u304f__,.\u30d8\u30fd.\u3000\u3000\u3000\u3000/\u3000,\u30fc\uff64 \u3009\n\u3000\u3000\u3000\u3000\u3000\uff3c ', !-\u2500\u2010-i\u3000/\u3000/\u00b4\n\u3000\u3000\u3000 \u3000 \uff0f\uff40\uff70'\u3000\u3000\u3000 L/\uff0f\uff40\u30fd\uff64\n\u3000\u3000 \u3000 /\u3000 \uff0f,\u3000 /|\u3000 ,\u3000 ,\u3000\u3000\u3000 ',\n\u3000\u3000\u3000\uff72 \u3000/ /-\u2010/\u3000\uff49\u3000L_ \uff8a \u30fd!\u3000 i\n\u3000\u3000\u3000 \uff9a \uff8d 7\uff72\uff40\uff84\u3000 \uff9a'\uff67-\uff84\uff64!\u30cf|\u3000 |\n\u3000\u3000\u3000\u3000 !,/7 '0'\u3000\u3000 \u00b40i\u30bd| \u3000 |\u3000\u3000\u3000\n\u3000\u3000\u3000\u3000 |.\u4ece\"\u3000\u3000_\u3000\u3000 ,,,, / |./ \u3000 |\n\u3000\u3000\u3000\u3000 \uff9a'| i\uff1e.\uff64,,__\u3000_,.\u30a4 / \u3000.i \u3000|\n\u3000\u3000\u3000\u3000\u3000 \uff9a'| | / k_\uff17_/\uff9a'\u30fd,\u3000\uff8a.\u3000|\n\u3000\u3000\u3000\u3000\u3000\u3000 | |/i \u3008|/\u3000 i\u3000,.\uff8d |\u3000i\u3000|\n\u3000\u3000\u3000\u3000\u3000\u3000.|/ /\u3000\uff49\uff1a \u3000 \uff8d!\u3000\u3000\uff3c\u3000|\n\u3000\u3000\u3000 \u3000 \u3000 k\u30fd>\uff64\uff8a \u3000 _,.\uff8d\uff64 \u3000 /\uff64!\n\u3000\u3000\u3000\u3000\u3000\u3000 !'\u3008//\uff40\uff34\u00b4', \uff3c \uff40'7'\uff70r'\n\u3000\u3000\u3000\u3000\u3000\u3000 \uff9a'\u30fdL__|___i,___,\u30f3\uff9a|\u30ce\n\u3000\u3000\u3000\u3000\u3000 \u3000\u3000\u3000\uff84-,/\u3000|___./\n\u3000\u3000\u3000\u3000\u3000 \u3000\u3000\u3000'\uff70'\u3000\u3000!_,.:\nLive2D \u770b\u677f\u5a18 v" + live2d_settings.l2dVersion + " / FGHRSH " + live2d_settings.l2dVerDate);
-    console.log(" ");
-    "function" != typeof $.ajax && ("function" == typeof jQuery.ajax ? window.$ = jQuery : console.log("[Error] JQuery is not defined."));
-    live2d_settings.waifuSize = live2d_settings.waifuSize.split("x");
-    live2d_settings.waifuTipsSize = live2d_settings.waifuTipsSize.split("x");
-    live2d_settings.waifuEdgeSide = live2d_settings.waifuEdgeSide.split(":");
-    $("#live2d").attr("width", live2d_settings.waifuSize[0]);
-    $("#live2d").attr("height", live2d_settings.waifuSize[1]);
-    $(".waifu-tips").width(live2d_settings.waifuTipsSize[0]);
-    $(".waifu-tips").height(live2d_settings.waifuTipsSize[1]);
-    $(".waifu-tips").css("top", live2d_settings.waifuToolTop);
-    $(".waifu-tips").css("font-size", live2d_settings.waifuFontSize);
-    $(".waifu-tool").css("font-size", live2d_settings.waifuToolFont);
-    $(".waifu-tool span").css("line-height", live2d_settings.waifuToolLine);
-    "left" == live2d_settings.waifuEdgeSide[0] ? $(".waifu").css("left", live2d_settings.waifuEdgeSide[1] + "px") : "right" == live2d_settings.waifuEdgeSide[0] && $(".waifu").css("right", live2d_settings.waifuEdgeSide[1] + "px");
-    window.waifuResize = function () {
-        $(window).width() <= Number(live2d_settings.waifuMinWidth.replace("px", "")) ? $(".waifu").hide() : $(".waifu").show()
-    };
-    "disable" != live2d_settings.waifuMinWidth && (waifuResize(), $(window).resize(function () {
-        waifuResize()
-    }));
-    try {
-        "axis-x" == live2d_settings.waifuDraggable ? $(".waifu").draggable({
-            axis: "x",
-            revert: live2d_settings.waifuDraggableRevert
-        }) : "unlimited" == live2d_settings.waifuDraggable ? $(".waifu").draggable({
-            revert: live2d_settings.waifuDraggableRevert
-        }) : $(".waifu").css("transition", "all .3s ease-in-out")
-    } catch (e) {
-        console.log("[Error] JQuery UI is not defined.")
-    }
-    "auto" == live2d_settings.homePageUrl ? (window.location.protocol, window.location.hostname) : live2d_settings.homePageUrl;
-    "file:" == window.location.protocol && "//" == live2d_settings.modelAPI.substr(0, 2) && (live2d_settings.modelAPI = "http:" + live2d_settings.modelAPI);
-    $(".waifu-tool .fui-home").click(function () {
-        window.location = live2d_settings.homePageUrl
-    });
-    $(".waifu-tool .fui-info-circle").click(function () {
-        window.open(live2d_settings.aboutPageUrl)
-    });
-    "object" == (void 0 === a ? "undefined" : _typeof(a)) ? loadTipsMessage(a): $.ajax({
-        cache: !0,
-        url: "" == a ? live2d_settings.tipsMessage : "waifu-tips.json" == a.substr(a.length - 15) ? a : a + "waifu-tips.json",
-        dataType: "json",
-        success: function (a) {
-            loadTipsMessage(a)
+// 默认模型
+live2d_settings['modelId']              = 1;            // 默认模型 ID，可在 F12 控制台找到
+live2d_settings['modelTexturesId']      = 53;           // 默认材质 ID，可在 F12 控制台找到
+
+// 工具栏设置
+live2d_settings['showToolMenu']         = true;         // 显示 工具栏          ，可选 true(真), false(假)
+live2d_settings['canCloseLive2d']       = true;         // 显示 关闭看板娘  按钮，可选 true(真), false(假)
+live2d_settings['canSwitchModel']       = true;         // 显示 模型切换    按钮，可选 true(真), false(假)
+live2d_settings['canSwitchTextures']    = true;         // 显示 材质切换    按钮，可选 true(真), false(假)
+live2d_settings['canSwitchHitokoto']    = true;         // 显示 一言切换    按钮，可选 true(真), false(假)
+live2d_settings['canTakeScreenshot']    = true;         // 显示 看板娘截图  按钮，可选 true(真), false(假)
+live2d_settings['canTurnToHomePage']    = true;         // 显示 返回首页    按钮，可选 true(真), false(假)
+live2d_settings['canTurnToAboutPage']   = true;         // 显示 跳转关于页  按钮，可选 true(真), false(假)
+
+// 模型切换模式
+live2d_settings['modelStorage']         = true;         // 记录 ID (刷新后恢复)，可选 true(真), false(假)
+live2d_settings['modelRandMode']        = 'switch';     // 模型切换，可选 'rand'(随机), 'switch'(顺序)
+live2d_settings['modelTexturesRandMode']= 'rand';       // 材质切换，可选 'rand'(随机), 'switch'(顺序)
+
+// 提示消息选项
+live2d_settings['showHitokoto']         = true;         // 显示一言
+live2d_settings['showF12Status']        = true;         // 显示加载状态
+live2d_settings['showF12Message']       = false;        // 显示看板娘消息
+live2d_settings['showF12OpenMsg']       = true;         // 显示控制台打开提示
+live2d_settings['showCopyMessage']      = true;         // 显示 复制内容 提示
+live2d_settings['showWelcomeMessage']   = true;         // 显示进入面页欢迎词
+
+//看板娘样式设置
+live2d_settings['waifuSize']            = '280x250';    // 看板娘大小，例如 '280x250', '600x535'
+live2d_settings['waifuTipsSize']        = '250x70';     // 提示框大小，例如 '250x70', '570x150'
+live2d_settings['waifuFontSize']        = '12px';       // 提示框字体，例如 '12px', '30px'
+live2d_settings['waifuToolFont']        = '14px';       // 工具栏字体，例如 '14px', '36px'
+live2d_settings['waifuToolLine']        = '20px';       // 工具栏行高，例如 '20px', '36px'
+live2d_settings['waifuToolTop']         = '0px'         // 工具栏顶部边距，例如 '0px', '-60px'
+live2d_settings['waifuMinWidth']        = '768px';      // 面页小于 指定宽度 隐藏看板娘，例如 'disable'(禁用), '768px'
+live2d_settings['waifuEdgeSide']        = 'left:0';     // 看板娘贴边方向，例如 'left:0'(靠左 0px), 'right:30'(靠右 30px)
+live2d_settings['waifuDraggable']       = 'disable';    // 拖拽样式，例如 'disable'(禁用), 'axis-x'(只能水平拖拽), 'unlimited'(自由拖拽)
+live2d_settings['waifuDraggableRevert'] = true;         // 松开鼠标还原拖拽位置，可选 true(真), false(假)
+
+// 其他杂项设置
+live2d_settings['l2dVersion']           = '1.4.2';        // 当前版本
+live2d_settings['l2dVerDate']           = '2018.11.12'; // 版本更新日期
+live2d_settings['homePageUrl']          = 'auto';       // 主页地址，可选 'auto'(自动), '{URL 网址}'
+live2d_settings['aboutPageUrl']         = 'https://www.fghrsh.net/post/123.html';   // 关于页地址, '{URL 网址}'
+live2d_settings['screenshotCaptureName']= 'live2d.png'; // 看板娘截图文件名，例如 'live2d.png'
+
+/****************************************************************************************************/
+
+String.prototype.render = function(context) {
+    var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+
+    return this.replace(tokenReg, function (word, slash1, token, slash2) {
+        if (slash1 || slash2) { return word.replace('\\', ''); }
+        
+        var variables = token.replace(/\s/g, '').split('.');
+        var currentObject = context;
+        var i, length, variable;
+        
+        for (i = 0, length = variables.length; i < length; ++i) {
+            variable = variables[i];
+            currentObject = currentObject[variable];
+            if (currentObject === undefined || currentObject === null) return '';
         }
+        return currentObject;
     });
-    live2d_settings.showToolMenu || $(".waifu-tool").hide();
-    live2d_settings.canCloseLive2d || $(".waifu-tool .fui-cross").hide();
-    live2d_settings.canSwitchModel || $(".waifu-tool .fui-eye").hide();
-    live2d_settings.canSwitchTextures || $(".waifu-tool .fui-user").hide();
-    live2d_settings.canSwitchHitokoto || $(".waifu-tool .fui-chat").hide();
-    live2d_settings.canTakeScreenshot || $(".waifu-tool .fui-photo").hide();
-    live2d_settings.canTurnToHomePage || $(".waifu-tool .fui-home").hide();
-    live2d_settings.canTurnToAboutPage || $(".waifu-tool .fui-info-circle").hide();
-    void 0 === a && (a = "");
-    a = localStorage.getItem("modelId");
-    c = localStorage.getItem("modelTexturesId");
-    live2d_settings.modelStorage && null != a || (a = live2d_settings.modelId, c = live2d_settings.modelTexturesId);
-    loadModel(a, c)
-}
-
-function loadModel(a) {
-    var c = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : 0;
-    live2d_settings.modelStorage ? (localStorage.setItem("modelId", a), localStorage.setItem("modelTexturesId", c)) : (sessionStorage.setItem("modelId", a), sessionStorage.setItem("modelTexturesId", c));
-    loadlive2d("live2d", live2d_settings.modelAPI + "get/?id=" + a + "-" + c, live2d_settings.showF12Status ? console.log("[Status]", "live2d", "\u6a21\u578b", a + "-" + c, "\u52a0\u8f7d\u5b8c\u6210") : null)
-}
-
-function loadTipsMessage(a) {
-    function c() {
-        var a = g("modelId"),
-            b = live2d_settings.modelRandMode;
-        $.ajax({
-            cache: "switch" == b,
-            url: live2d_settings.modelAPI + b + "/?id=" + a,
-            dataType: "json",
-            success: function (a) {
-                loadModel(a.model.id);
-                var b = a.model.message;
-                $.each(f.model_message, function (l, d) {
-                    l == a.model.id && (b = getRandText(d))
-                });
-                showMessage(b, 3E3, !0)
-            }
-        })
-    }
-
-    function e() {
-        var a = g("modelId"),
-            b = g("modelTexturesId"),
-            d = live2d_settings.modelTexturesRandMode;
-        $.ajax({
-            cache: "switch" == d,
-            url: live2d_settings.modelAPI + d + "_textures/?id=" + a + "-" + b,
-            dataType: "json",
-            success: function (l) {
-                1 != l.textures.id || 1 != b && 0 != b ? showMessage(f.load_rand_textures[1], 3E3, !0) : showMessage(f.load_rand_textures[0], 3E3, !0);
-                loadModel(a, l.textures.id)
-            }
-        })
-    }
-
-    function g(a) {
-        return live2d_settings.modelStorage ? localStorage.getItem(a) : sessionStorage.getItem(a)
-    }
-
-    function h() {
-        "visible" == $(document)[0].visibilityState && k()
-    }
-
-    function k() {
-        switch (live2d_settings.hitokotoAPI) {
-            case "lwl12.com":
-                $.getJSON("https://api.lwl12.com/hitokoto/v1?encode=realjson", function (a) {
-                    if (!empty(a.source)) {
-                        var b = f.hitokoto_api_message["lwl12.com"][0];
-                        empty(a.author) || (b += f.hitokoto_api_message["lwl12.com"][1]);
-                        b = b.render({
-                            source: a.source,
-                            creator: a.author
-                        });
-                        window.setTimeout(function () {
-                            showMessage(b + f.hitokoto_api_message["lwl12.com"][2], 3E3, !0)
-                        }, 5E3)
-                    }
-                    showMessage(a.text, 5E3, !0)
-                });
-                break;
-            case "fghrsh.net":
-                $.getJSON("https://api.fghrsh.net/hitokoto/rand/?encode=jsc&uid=3335", function (a) {
-                    if (!empty(a.source)) {
-                        var b = f.hitokoto_api_message["fghrsh.net"][0];
-                        b = b.render({
-                            source: a.source,
-                            date: a.date
-                        });
-                        window.setTimeout(function () {
-                            showMessage(b, 3E3, !0)
-                        }, 5E3);
-                        showMessage(a.hitokoto, 5E3, !0)
-                    }
-                });
-                break;
-            case "jinrishici.com":
-                $.ajax({
-                    url: "https://v2.jinrishici.com/one.json",
-                    xhrFields: {
-                        withCredentials: !0
-                    },
-                    success: function (a, b) {
-                        if (!empty(a.data.origin.title)) {
-                            var d = f.hitokoto_api_message["jinrishici.com"][0];
-                            d = d.render({
-                                title: a.data.origin.title,
-                                dynasty: a.data.origin.dynasty,
-                                author: a.data.origin.author
-                            });
-                            window.setTimeout(function () {
-                                showMessage(d, 3E3, !0)
-                            }, 5E3)
-                        }
-                        showMessage(a.data.content, 5E3, !0)
-                    }
-                });
-                break;
-            default:
-                $.getJSON("https://v1.hitokoto.cn", function (a) {
-                    if (!empty(a.from)) {
-                        var b = f.hitokoto_api_message["hitokoto.cn"][0];
-                        b = b.render({
-                            source: a.from,
-                            creator: a.creator
-                        });
-                        window.setTimeout(function () {
-                            showMessage(b, 3E3, !0)
-                        }, 5E3)
-                    }
-                    showMessage(a.hitokoto, 5E3, !0)
-                })
-        }
-    }
-    window.waifu_tips = a;
-    $.each(a.mouseover, function (a, b) {
-        $(document).on("mouseover", b.selector, function () {
-            var a = getRandText(b.text);
-            a = a.render({
-                text: $(this).text()
-            });
-            showMessage(a, 3E3)
-        })
-    });
-    $.each(a.click, function (a, b) {
-        $(document).on("click", b.selector, function () {
-            var a = getRandText(b.text);
-            a = a.render({
-                text: $(this).text()
-            });
-            showMessage(a, 3E3, !0)
-        })
-    });
-    $.each(a.seasons, function (a, b) {
-        a = new Date;
-        var d = b.date.split("-")[0],
-            c = b.date.split("-")[1] || d;
-        d.split("/")[0] <= a.getMonth() + 1 && a.getMonth() + 1 <= c.split("/")[0] && d.split("/")[1] <= a.getDate() && a.getDate() <= c.split("/")[1] && (b = getRandText(b.text), b = b.render({
-            year: a.getFullYear()
-        }), showMessage(b, 6E3, !0))
-    });
-    live2d_settings.showF12OpenMsg && (re.toString = function () {
-        return showMessage(getRandText(a.waifu.console_open_msg), 5E3, !0), ""
-    });
-    live2d_settings.showCopyMessage && $(document).on("copy", function () {
-        showMessage(getRandText(a.waifu.copy_message), 5E3, !0)
-    });
-    $(".waifu-tool .fui-photo").click(function () {
-        showMessage(getRandText(a.waifu.screenshot_message), 5E3, !0);
-        window.Live2D.captureName = live2d_settings.screenshotCaptureName;
-        window.Live2D.captureFrame = !0
-    });
-    $(".waifu-tool .fui-cross").click(function () {
-        sessionStorage.setItem("waifu-dsiplay", "none");
-        showMessage(getRandText(a.waifu.hidden_message), 1300, !0);
-        window.setTimeout(function () {
-            $(".waifu").hide()
-        }, 1300)
-    });
-    window.showWelcomeMessage = function (a) {
-        if (window.location.href == live2d_settings.homePageUrl) {
-            var b = (new Date).getHours();
-            b = getRandText(23 < b || 5 >= b ? a.waifu.hour_tips.t23 - 5 : 5 < b && 7 >= b ? a.waifu.hour_tips.t5 - 7 : 7 < b && 11 >= b ? a.waifu.hour_tips.t7 - 11 : 11 < b && 14 >= b ? a.waifu.hour_tips.t11 - 14 : 14 < b && 17 >= b ? a.waifu.hour_tips.t14 - 17 : 17 < b && 19 >= b ? a.waifu.hour_tips.t17 - 19 : 19 < b && 21 >= b ? a.waifu.hour_tips.t19 - 21 : 21 < b && 23 >= b ? a.waifu.hour_tips.t21 - 23 : a.waifu.hour_tips.default)
-        } else {
-            var d = a.waifu.referrer_message;
-            if ("" !== document.referrer) {
-                var c = document.createElement("a");
-                c.href = document.referrer;
-                var e = c.hostname.split(".")[1];
-                window.location.hostname == c.hostname ? b = d.localhost[0] + document.title.split(d.localhost[2])[0] + d.localhost[1] : "baidu" == e ? b = d.baidu[0] + c.search.split("&wd=")[1].split("&")[0] + d.baidu[1] : "so" == e ? b = d.so[0] + c.search.split("&q=")[1].split("&")[0] + d.so[1] : "google" == e ? b = d.google[0] + document.title.split(d.google[2])[0] + d.google[1] : ($.each(a.waifu.referrer_hostname, function (a, b) {
-                    a == c.hostname && (c.hostname = getRandText(b))
-                }), b = d.default[0] + c.hostname + d.default[1])
-            } else b = d.none[0] + document.title.split(d.none[2])[0] + d.none[1]
-        }
-        showMessage(b, 6E3)
-    };
-    live2d_settings.showWelcomeMessage && showWelcomeMessage(a);
-    var f = a.waifu;
-    live2d_settings.showHitokoto && (window.getActed = !1, window.hitokotoTimer = 0, window.hitokotoInterval = !1, $(document).mousemove(function (a) {
-        getActed = !0
-    }).keydown(function () {
-        getActed = !0
-    }), setInterval(function () {
-        getActed ? (getActed = hitokotoInterval = !1, window.clearInterval(hitokotoTimer)) : hitokotoInterval || (hitokotoInterval = !0, hitokotoTimer = window.setInterval(h, 3E4))
-    }, 1E3));
-    $(".waifu-tool .fui-eye").click(function () {
-        c()
-    });
-    $(".waifu-tool .fui-user").click(function () {
-        e()
-    });
-    $(".waifu-tool .fui-chat").click(function () {
-        k()
-    })
-}
-var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (a) {
-    return typeof a
-} : function (a) {
-    return a && "function" == typeof Symbol && a.constructor === Symbol && a !== Symbol.prototype ? "symbol" : typeof a
 };
-window.live2d_settings = [];
-live2d_settings.modelAPI = "//live2d.fghrsh.net/api/";
-live2d_settings.tipsMessage = "waifu-tips.json";
-live2d_settings.hitokotoAPI = "lwl12.com";
-live2d_settings.modelId = 1;
-live2d_settings.modelTexturesId = 53;
-live2d_settings.showToolMenu = !0;
-live2d_settings.canCloseLive2d = !0;
-live2d_settings.canSwitchModel = !0;
-live2d_settings.canSwitchTextures = !0;
-live2d_settings.canSwitchHitokoto = !0;
-live2d_settings.canTakeScreenshot = !0;
-live2d_settings.canTurnToHomePage = !0;
-live2d_settings.canTurnToAboutPage = !0;
-live2d_settings.modelStorage = !0;
-live2d_settings.modelRandMode = "switch";
-live2d_settings.modelTexturesRandMode = "rand";
-live2d_settings.showHitokoto = !0;
-live2d_settings.showF12Status = !0;
-live2d_settings.showF12Message = !0;
-live2d_settings.showF12OpenMsg = !0;
-live2d_settings.showCopyMessage = !0;
-live2d_settings.showWelcomeMessage = !0;
-live2d_settings.waifuSize = "280x250";
-live2d_settings.waifuTipsSize = "250x70";
-live2d_settings.waifuFontSize = "12px";
-live2d_settings.waifuToolFont = "14px";
-live2d_settings.waifuToolLine = "20px";
-live2d_settings.waifuToolTop = "0px";
-live2d_settings.waifuMinWidth = "768px";
-live2d_settings.waifuEdgeSide = "left:0";
-live2d_settings.waifuDraggable = "disable";
-live2d_settings.waifuDraggableRevert = !0;
-live2d_settings.l2dVersion = "1.4.2";
-live2d_settings.l2dVerDate = "2018.11.12";
-live2d_settings.homePageUrl = "auto";
-live2d_settings.aboutPageUrl = "https://www.fghrsh.net/post/123.html";
-live2d_settings.screenshotCaptureName = "live2d.png";
-String.prototype.render = function (a) {
-    return this.replace(/(\\)?\{([^\{\}\\]+)(\\)?\}/g, function (c, e, g, h) {
-        if (e || h) return c.replace("\\", "");
-        var k;
-        g = g.replace(/\s/g, "").split(".");
-        h = a;
-        c = 0;
-        for (e = g.length; c < e; ++c)
-            if (k = g[c], void 0 === (h = h[k]) || null === h) return "";
-        return h
-    })
-};
+
 var re = /x/;
 console.log(re);
+
+function empty(obj) {return typeof obj=="undefined"||obj==null||obj==""?true:false}
+function getRandText(text) {return Array.isArray(text) ? text[Math.floor(Math.random() * text.length + 1)-1] : text}
+
+function showMessage(text, timeout, flag) {
+    if(flag || sessionStorage.getItem('waifu-text') === '' || sessionStorage.getItem('waifu-text') === null){
+        if(Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1)-1];
+        if (live2d_settings.showF12Message) console.log('[Message]', text.replace(/<[^<>]+>/g,''));
+        
+        if(flag) sessionStorage.setItem('waifu-text', text);
+        
+        $('.waifu-tips').stop();
+        $('.waifu-tips').html(text).fadeTo(200, 1);
+        if (timeout === undefined) timeout = 5000;
+        hideMessage(timeout);
+    }
+}
+
+function hideMessage(timeout) {
+    $('.waifu-tips').stop().css('opacity',1);
+    if (timeout === undefined) timeout = 5000;
+    window.setTimeout(function() {sessionStorage.removeItem('waifu-text')}, timeout);
+    $('.waifu-tips').delay(timeout).fadeTo(200, 0);
+}
+
+function initModel(waifuPath, type) {
+    /* console welcome message */
+    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('8.d(" ");8.d("\\U,.\\y\\5.\\1\\1\\1\\1/\\1,\\u\\2 \\H\\n\\1\\1\\1\\1\\1\\b \', !-\\r\\j-i\\1/\\1/\\g\\n\\1\\1\\1 \\1 \\a\\4\\f\'\\1\\1\\1 L/\\a\\4\\5\\2\\n\\1\\1 \\1 /\\1 \\a,\\1 /|\\1 ,\\1 ,\\1\\1\\1 \',\\n\\1\\1\\1\\q \\1/ /-\\j/\\1\\h\\E \\9 \\5!\\1 i\\n\\1\\1\\1 \\3 \\6 7\\q\\4\\c\\1 \\3\'\\s-\\c\\2!\\t|\\1 |\\n\\1\\1\\1\\1 !,/7 \'0\'\\1\\1 \\X\\w| \\1 |\\1\\1\\1\\n\\1\\1\\1\\1 |.\\x\\"\\1\\l\\1\\1 ,,,, / |./ \\1 |\\n\\1\\1\\1\\1 \\3\'| i\\z.\\2,,A\\l,.\\B / \\1.i \\1|\\n\\1\\1\\1\\1\\1 \\3\'| | / C\\D/\\3\'\\5,\\1\\9.\\1|\\n\\1\\1\\1\\1\\1\\1 | |/i \\m|/\\1 i\\1,.\\6 |\\F\\1|\\n\\1\\1\\1\\1\\1\\1.|/ /\\1\\h\\G \\1 \\6!\\1\\1\\b\\1|\\n\\1\\1\\1 \\1 \\1 k\\5>\\2\\9 \\1 o,.\\6\\2 \\1 /\\2!\\n\\1\\1\\1\\1\\1\\1 !\'\\m//\\4\\I\\g\', \\b \\4\'7\'\\J\'\\n\\1\\1\\1\\1\\1\\1 \\3\'\\K|M,p,\\O\\3|\\P\\n\\1\\1\\1\\1\\1 \\1\\1\\1\\c-,/\\1|p./\\n\\1\\1\\1\\1\\1 \\1\\1\\1\'\\f\'\\1\\1!o,.:\\Q \\R\\S\\T v"+e.V+" / W "+e.N);8.d(" ");',60,60,'|u3000|uff64|uff9a|uff40|u30fd|uff8d||console|uff8a|uff0f|uff3c|uff84|log|live2d_settings|uff70|u00b4|uff49||u2010||u3000_|u3008||_|___|uff72|u2500|uff67|u30cf|u30fc||u30bd|u4ece|u30d8|uff1e|__|u30a4|k_|uff17_|u3000L_|u3000i|uff1a|u3009|uff34|uff70r|u30fdL__||___i|l2dVerDate|u30f3|u30ce|nLive2D|u770b|u677f|u5a18|u304f__|l2dVersion|FGHRSH|u00b40i'.split('|'),0,{}));
+    
+    /* 判断 JQuery */
+    if (typeof($.ajax) != 'function') typeof(jQuery.ajax) == 'function' ? window.$ = jQuery : console.log('[Error] JQuery is not defined.');
+    
+    /* 加载看板娘样式 */
+    live2d_settings.waifuSize = live2d_settings.waifuSize.split('x');
+    live2d_settings.waifuTipsSize = live2d_settings.waifuTipsSize.split('x');
+    live2d_settings.waifuEdgeSide = live2d_settings.waifuEdgeSide.split(':');
+    
+    $("#live2d").attr("width",live2d_settings.waifuSize[0]);
+    $("#live2d").attr("height",live2d_settings.waifuSize[1]);
+    $(".waifu-tips").width(live2d_settings.waifuTipsSize[0]);
+    $(".waifu-tips").height(live2d_settings.waifuTipsSize[1]);
+    $(".waifu-tips").css("top",live2d_settings.waifuToolTop);
+    $(".waifu-tips").css("font-size",live2d_settings.waifuFontSize);
+    $(".waifu-tool").css("font-size",live2d_settings.waifuToolFont);
+    $(".waifu-tool span").css("line-height",live2d_settings.waifuToolLine);
+    
+    if (live2d_settings.waifuEdgeSide[0] == 'left') $(".waifu").css("left",live2d_settings.waifuEdgeSide[1]+'px');
+    else if (live2d_settings.waifuEdgeSide[0] == 'right') $(".waifu").css("right",live2d_settings.waifuEdgeSide[1]+'px');
+    
+    window.waifuResize = function() { $(window).width() <= Number(live2d_settings.waifuMinWidth.replace('px','')) ? $(".waifu").hide() : $(".waifu").show(); };
+    if (live2d_settings.waifuMinWidth != 'disable') { waifuResize(); $(window).resize(function() {waifuResize()}); }
+    
+    try {
+        if (live2d_settings.waifuDraggable == 'axis-x') $(".waifu").draggable({ axis: "x", revert: live2d_settings.waifuDraggableRevert });
+        else if (live2d_settings.waifuDraggable == 'unlimited') $(".waifu").draggable({ revert: live2d_settings.waifuDraggableRevert });
+        else $(".waifu").css("transition", 'all .3s ease-in-out');
+    } catch(err) { console.log('[Error] JQuery UI is not defined.') }
+    
+    live2d_settings.homePageUrl = live2d_settings.homePageUrl == 'auto' ? window.location.protocol+'//'+window.location.hostname+'/' : live2d_settings.homePageUrl;
+    if (window.location.protocol == 'file:' && live2d_settings.modelAPI.substr(0,2) == '//') live2d_settings.modelAPI = 'http:'+live2d_settings.modelAPI;
+    
+    $('.waifu-tool .fui-home').click(function (){
+        //window.location = 'https://www.fghrsh.net/';
+        window.location = live2d_settings.homePageUrl;
+    });
+    
+    $('.waifu-tool .fui-info-circle').click(function (){
+        //window.open('https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02');
+        window.open(live2d_settings.aboutPageUrl);
+    });
+    
+    if (typeof(waifuPath) == "object") loadTipsMessage(waifuPath); else {
+        $.ajax({
+            cache: true,
+            url: waifuPath == '' ? live2d_settings.tipsMessage : (waifuPath.substr(waifuPath.length-15)=='waifu-tips.json'?waifuPath:waifuPath+'waifu-tips.json'),
+            dataType: "json",
+            success: function (result){ loadTipsMessage(result); }
+        });
+    }
+    
+    if (!live2d_settings.showToolMenu) $('.waifu-tool').hide();
+    if (!live2d_settings.canCloseLive2d) $('.waifu-tool .fui-cross').hide();
+    if (!live2d_settings.canSwitchModel) $('.waifu-tool .fui-eye').hide();
+    if (!live2d_settings.canSwitchTextures) $('.waifu-tool .fui-user').hide();
+    if (!live2d_settings.canSwitchHitokoto) $('.waifu-tool .fui-chat').hide();
+    if (!live2d_settings.canTakeScreenshot) $('.waifu-tool .fui-photo').hide();
+    if (!live2d_settings.canTurnToHomePage) $('.waifu-tool .fui-home').hide();
+    if (!live2d_settings.canTurnToAboutPage) $('.waifu-tool .fui-info-circle').hide();
+
+    if (waifuPath === undefined) waifuPath = '';
+    var modelId = localStorage.getItem('modelId');
+    var modelTexturesId = localStorage.getItem('modelTexturesId');
+    
+    if (!live2d_settings.modelStorage || modelId == null) {
+        var modelId = live2d_settings.modelId;
+        var modelTexturesId = live2d_settings.modelTexturesId;
+    } loadModel(modelId, modelTexturesId);
+}
+
+function loadModel(modelId, modelTexturesId=0) {
+    if (live2d_settings.modelStorage) {
+        localStorage.setItem('modelId', modelId);
+        localStorage.setItem('modelTexturesId', modelTexturesId);
+    } else {
+        sessionStorage.setItem('modelId', modelId);
+        sessionStorage.setItem('modelTexturesId', modelTexturesId);
+    } loadlive2d('live2d', live2d_settings.modelAPI+'get/?id='+modelId+'-'+modelTexturesId, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
+}
+
+function loadTipsMessage(result) {
+    window.waifu_tips = result;
+    
+    $.each(result.mouseover, function (index, tips){
+        $(document).on("mouseover", tips.selector, function (){
+            var text = getRandText(tips.text);
+            text = text.render({text: $(this).text()});
+            showMessage(text, 3000);
+        });
+    });
+    $.each(result.click, function (index, tips){
+        $(document).on("click", tips.selector, function (){
+            var text = getRandText(tips.text);
+            text = text.render({text: $(this).text()});
+            showMessage(text, 3000, true);
+        });
+    });
+    $.each(result.seasons, function (index, tips){
+        var now = new Date();
+        var after = tips.date.split('-')[0];
+        var before = tips.date.split('-')[1] || after;
+        
+        if((after.split('/')[0] <= now.getMonth()+1 && now.getMonth()+1 <= before.split('/')[0]) && 
+           (after.split('/')[1] <= now.getDate() && now.getDate() <= before.split('/')[1])){
+            var text = getRandText(tips.text);
+            text = text.render({year: now.getFullYear()});
+            showMessage(text, 6000, true);
+        }
+    });
+    
+    if (live2d_settings.showF12OpenMsg) {
+        re.toString = function() {
+            showMessage(getRandText(result.waifu.console_open_msg), 5000, true);
+            return '';
+        };
+    }
+    
+    if (live2d_settings.showCopyMessage) {
+        $(document).on('copy', function() {
+            showMessage(getRandText(result.waifu.copy_message), 5000, true);
+        });
+    }
+    
+    $('.waifu-tool .fui-photo').click(function(){
+        showMessage(getRandText(result.waifu.screenshot_message), 5000, true);
+        window.Live2D.captureName = live2d_settings.screenshotCaptureName;
+        window.Live2D.captureFrame = true;
+    });
+    
+    $('.waifu-tool .fui-cross').click(function(){
+        sessionStorage.setItem('waifu-dsiplay', 'none');
+        showMessage(getRandText(result.waifu.hidden_message), 1300, true);
+        window.setTimeout(function() {$('.waifu').hide();}, 1300);
+    });
+    
+    window.showWelcomeMessage = function(result) {
+        var text;
+        if (window.location.href == live2d_settings.homePageUrl) {
+            var now = (new Date()).getHours();
+            if (now > 23 || now <= 5) text = getRandText(result.waifu.hour_tips['t23-5']);
+            else if (now > 5 && now <= 7) text = getRandText(result.waifu.hour_tips['t5-7']);
+            else if (now > 7 && now <= 11) text = getRandText(result.waifu.hour_tips['t7-11']);
+            else if (now > 11 && now <= 14) text = getRandText(result.waifu.hour_tips['t11-14']);
+            else if (now > 14 && now <= 17) text = getRandText(result.waifu.hour_tips['t14-17']);
+            else if (now > 17 && now <= 19) text = getRandText(result.waifu.hour_tips['t17-19']);
+            else if (now > 19 && now <= 21) text = getRandText(result.waifu.hour_tips['t19-21']);
+            else if (now > 21 && now <= 23) text = getRandText(result.waifu.hour_tips['t21-23']);
+            else text = getRandText(result.waifu.hour_tips.default);
+        } else {
+            var referrer_message = result.waifu.referrer_message;
+            if (document.referrer !== '') {
+                var referrer = document.createElement('a');
+                referrer.href = document.referrer;
+                var domain = referrer.hostname.split('.')[1];
+                if (window.location.hostname == referrer.hostname)
+                    text = referrer_message.localhost[0] + document.title.split(referrer_message.localhost[2])[0] + referrer_message.localhost[1];
+                else if (domain == 'baidu')
+                    text = referrer_message.baidu[0] + referrer.search.split('&wd=')[1].split('&')[0] + referrer_message.baidu[1];
+                else if (domain == 'so')
+                    text = referrer_message.so[0] + referrer.search.split('&q=')[1].split('&')[0] + referrer_message.so[1];
+                else if (domain == 'google')
+                    text = referrer_message.google[0] + document.title.split(referrer_message.google[2])[0] + referrer_message.google[1];
+                else {
+                    $.each(result.waifu.referrer_hostname, function(i,val) {if (i==referrer.hostname) referrer.hostname = getRandText(val)});
+                    text = referrer_message.default[0] + referrer.hostname + referrer_message.default[1];
+                }
+            } else text = referrer_message.none[0] + document.title.split(referrer_message.none[2])[0] + referrer_message.none[1];
+        }
+        showMessage(text, 6000);
+    }; if (live2d_settings.showWelcomeMessage) showWelcomeMessage(result);
+    
+    var waifu_tips = result.waifu;
+    
+    function loadOtherModel() {
+        var modelId = modelStorageGetItem('modelId');
+        var modelRandMode = live2d_settings.modelRandMode;
+        
+        $.ajax({
+            cache: modelRandMode == 'switch' ? true : false,
+            url: live2d_settings.modelAPI+modelRandMode+'/?id='+modelId,
+            dataType: "json",
+            success: function(result) {
+                loadModel(result.model['id']);
+                var message = result.model['message'];
+                $.each(waifu_tips.model_message, function(i,val) {if (i==result.model['id']) message = getRandText(val)});
+                showMessage(message, 3000, true);
+            }
+        });
+    }
+    
+    function loadRandTextures() {
+        var modelId = modelStorageGetItem('modelId');
+        var modelTexturesId = modelStorageGetItem('modelTexturesId');
+        var modelTexturesRandMode = live2d_settings.modelTexturesRandMode;
+        
+        $.ajax({
+            cache: modelTexturesRandMode == 'switch' ? true : false,
+            url: live2d_settings.modelAPI+modelTexturesRandMode+'_textures/?id='+modelId+'-'+modelTexturesId,
+            dataType: "json",
+            success: function(result) {
+                if (result.textures['id'] == 1 && (modelTexturesId == 1 || modelTexturesId == 0))
+                    showMessage(waifu_tips.load_rand_textures[0], 3000, true);
+                else showMessage(waifu_tips.load_rand_textures[1], 3000, true);
+                loadModel(modelId, result.textures['id']);
+            }
+        });
+    }
+    
+    function modelStorageGetItem(key) { return live2d_settings.modelStorage ? localStorage.getItem(key) : sessionStorage.getItem(key); }
+    
+    /* 检测用户活动状态，并在空闲时显示一言 */
+    if (live2d_settings.showHitokoto) {
+        window.getActed = false; window.hitokotoTimer = 0; window.hitokotoInterval = false;
+        $(document).mousemove(function(e){getActed = true;}).keydown(function(){getActed = true;});
+        setInterval(function(){ if (!getActed) ifActed(); else elseActed(); }, 1000);
+    }
+    
+    function ifActed() {
+        if (!hitokotoInterval) {
+            hitokotoInterval = true;
+            hitokotoTimer = window.setInterval(showHitokotoActed, 30000);
+        }
+    }
+    
+    function elseActed() {
+        getActed = hitokotoInterval = false;
+        window.clearInterval(hitokotoTimer);
+    }
+    
+    function showHitokotoActed() {
+        if ($(document)[0].visibilityState == 'visible') showHitokoto();
+    }
+    
+    function showHitokoto() {
+    	switch(live2d_settings.hitokotoAPI) {
+    	    case 'lwl12.com':
+    	        $.getJSON('https://api.lwl12.com/hitokoto/v1?encode=realjson',function(result){
+        	        if (!empty(result.source)) {
+                        var text = waifu_tips.hitokoto_api_message['lwl12.com'][0];
+                        if (!empty(result.author)) text += waifu_tips.hitokoto_api_message['lwl12.com'][1];
+                        text = text.render({source: result.source, creator: result.author});
+                        window.setTimeout(function() {showMessage(text+waifu_tips.hitokoto_api_message['lwl12.com'][2], 3000, true);}, 5000);
+                    } showMessage(result.text, 5000, true);
+                });break;
+    	    case 'fghrsh.net':
+    	        $.getJSON('https://api.fghrsh.net/hitokoto/rand/?encode=jsc&uid=3335',function(result){
+            	    if (!empty(result.source)) {
+                        var text = waifu_tips.hitokoto_api_message['fghrsh.net'][0];
+                        text = text.render({source: result.source, date: result.date});
+                        window.setTimeout(function() {showMessage(text, 3000, true);}, 5000);
+                        showMessage(result.hitokoto, 5000, true);
+            	    }
+                });break;
+            case 'jinrishici.com':
+                $.ajax({
+                    url: 'https://v2.jinrishici.com/one.json',
+                    xhrFields: {withCredentials: true},
+                    success: function (result, status) {
+                        if (!empty(result.data.origin.title)) {
+                            var text = waifu_tips.hitokoto_api_message['jinrishici.com'][0];
+                            text = text.render({title: result.data.origin.title, dynasty: result.data.origin.dynasty, author:result.data.origin.author});
+                            window.setTimeout(function() {showMessage(text, 3000, true);}, 5000);
+                        } showMessage(result.data.content, 5000, true);
+                    }
+                });break;
+    	    default:
+    	        $.getJSON('https://v1.hitokoto.cn',function(result){
+            	    if (!empty(result.from)) {
+                        var text = waifu_tips.hitokoto_api_message['hitokoto.cn'][0];
+                        text = text.render({source: result.from, creator: result.creator});
+                        window.setTimeout(function() {showMessage(text, 3000, true);}, 5000);
+            	    }
+                    showMessage(result.hitokoto, 5000, true);
+                });
+    	}
+    }
+    
+    $('.waifu-tool .fui-eye').click(function (){loadOtherModel()});
+    $('.waifu-tool .fui-user').click(function (){loadRandTextures()});
+    $('.waifu-tool .fui-chat').click(function (){showHitokoto()});
+}
