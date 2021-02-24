@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <title>SSRR&nbsp使用教程</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="SSRR.css">
     <script src="../another/iconfont.js"></script>
     <script type="text/javascript">
         if (/Android|webOS| iPhone | iPad | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(
                 navigator.userAgent)) {
-            window.location.replace("SSRRM.html");
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'SSRRM.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = '../assets/waifu.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "autoloadM.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
+
+        } else {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'SSRRPC.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = '../assets/waifu.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "../assets/autoloadPC.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
         }
 
         function copypcmimaone() {
@@ -95,6 +129,9 @@
 </head>
 
 <body>
+    <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <script src="../assets/jquery.js"></script>
+
     <header>
         <div>SSRR使用教程</div>
         <svg class="icon feijiicon" aria-hidden="true">
