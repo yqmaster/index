@@ -5,26 +5,52 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="img/x-icon" href="图片\index.ico" />
     <title>Master's&nbsp主&nbsp页</title>
-    <link rel="stylesheet" href="index.css">
     <script src="another\iconfont.js"></script>
     <script type="text/javascript">
         if (/Android|webOS| iPhone | iPad | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(
                 navigator.userAgent)) {
-            window.location.replace("mobile.html");
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'indexM.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'assets/waifu.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "assets/autoloadM.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
+        } else {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'indexPC.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'assets/waifu.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "assets/autoloadPC.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
         }
     </script>
-       <link rel="stylesheet" type="text/css" href="assets/waifu.css" />
 </head>
 
 <body>
-     <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <!-- waifu-tips.js 依赖 JQuery 库 -->
     <script src="assets/jquery.js"></script>
-
-    <!-- 实现拖动效果，需引入 JQuery UI -->
-    <script src="assets/jquery-ui.js"></script>
-
-    <!-- 使用 aotuload.js 引入看板娘 -->
-    <script src="assets/autoload.js"></script>
 
     <div class="welcomebox">
         <center class="welcometext">欢迎来到 Master's Home</center>
