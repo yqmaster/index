@@ -19,24 +19,29 @@ window.live2d_settings = Array(); /*
     　　　　　 　　　'ｰ'　　!_,.:*********************************************************************************/
 
 
+// 静态 API 文件
+live2d_settings['staticAPIFile']        = '../assets/model/static-api-file.json';
+live2d_settings['staticPath']           = '../assets/model';
+live2d_settings['defaultModel']         = '{"version":"1.0.0","model":"MODEL_HOME/ShizukuTalk/shizuku-48/model.moc","textures":["MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/00.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/01.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/02.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/03.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/04.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/05.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/06.png","MODEL_HOME/ShizukuTalk/shizuku-48/textures.512/07.png"],"physics":"MODEL_HOME/ShizukuTalk/shizuku-48/physics.json","pose":"MODEL_HOME/ShizukuTalk/shizuku-48/pose.json","expressions":[{"name":"f01","file":"MODEL_HOME/ShizukuTalk/shizuku-48/expressions/f01.exp.json"},{"name":"f02","file":"MODEL_HOME/ShizukuTalk/shizuku-48/expressions/f02.exp.json"},{"name":"f03","file":"MODEL_HOME/ShizukuTalk/shizuku-48/expressions/f03.exp.json"},{"name":"f04","file":"MODEL_HOME/ShizukuTalk/shizuku-48/expressions/f04.exp.json"}],"layout":{"center_x":0,"center_y":-0.16,"width":1.8},"hit_areas_custom":{"head_x":[-0.35,0.6],"head_y":[0.19,-0.2],"body_x":[-0.3,-0.25],"body_y":[0.3,-0.9]},"motions":{"idle":[{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_00.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_01.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_02.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_03.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_04.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idl_05.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_01.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_02.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_03.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_04.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_05.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_06.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_07.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_08.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_09.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_A.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_A2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_B.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_B2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_C.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_C2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/idle_C2_copy.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/kurakura1.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/kurakura2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/kurakura3.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/wait_01.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/wait_02.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/wait_03.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/wait_04.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/wait_05.mtn"}],"flick_head":[{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/double_tap1.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/double_tap2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/double_tap3.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/double_tap4.mtn"}],"tap_body":[{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/touch1.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/touch2.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/touch3.mtn"},{"file":"MODEL_HOME/ShizukuTalk/shizuku-48/motions/touch4.mtn"}]}}'.replace(/MODEL_HOME/g, live2d_settings['staticPath']);
+
 // 后端接口
-live2d_settings['modelAPI']             = '//live2d.fghrsh.net/api/';   // 自建 API 修改这里
-live2d_settings['tipsMessage']          = 'waifu-tips.json';            // 同目录下可省略路径
-live2d_settings['hitokotoAPI']          = 'lwl12.com';                  // 一言 API，可选 'lwl12.com', 'hitokoto.cn', 'jinrishici.com'(古诗词)
+live2d_settings['modelAPI']             = '';                 // 自建 API 修改这里(已失效)
+live2d_settings['tipsMessage']          = '../assets/waifu-tips.json';            // 同目录下可省略路径
+live2d_settings['hitokotoAPI']          = '';                  // 一言 API，可选 'lwl12.com', 'hitokoto.cn', 'jinrishici.com'(古诗词)
 
 // 默认模型
-live2d_settings['modelId']              = 1;            // 默认模型 ID，可在 F12 控制台找到
-live2d_settings['modelTexturesId']      = 53;           // 默认材质 ID，可在 F12 控制台找到
+live2d_settings['modelId']              = 0;            // 默认模型 ID，可在 F12 控制台找到(已失效)
+live2d_settings['modelTexturesId']      = 0;           // 默认材质 ID，可在 F12 控制台找到(已失效)
 
 // 工具栏设置
 live2d_settings['showToolMenu']         = true;         // 显示 工具栏          ，可选 true(真), false(假)
 live2d_settings['canCloseLive2d']       = true;         // 显示 关闭看板娘  按钮，可选 true(真), false(假)
-live2d_settings['canSwitchModel']       = true;         // 显示 模型切换    按钮，可选 true(真), false(假)
+live2d_settings['canSwitchModel']       = false;         // 显示 模型切换    按钮，可选 true(真), false(假)
 live2d_settings['canSwitchTextures']    = true;         // 显示 材质切换    按钮，可选 true(真), false(假)
-live2d_settings['canSwitchHitokoto']    = true;         // 显示 一言切换    按钮，可选 true(真), false(假)
+live2d_settings['canSwitchHitokoto']    = false;         // 显示 一言切换    按钮，可选 true(真), false(假)
 live2d_settings['canTakeScreenshot']    = true;         // 显示 看板娘截图  按钮，可选 true(真), false(假)
 live2d_settings['canTurnToHomePage']    = true;         // 显示 返回首页    按钮，可选 true(真), false(假)
-live2d_settings['canTurnToAboutPage']   = true;         // 显示 跳转关于页  按钮，可选 true(真), false(假)
+live2d_settings['canTurnToAboutPage']   = false;         // 显示 跳转关于页  按钮，可选 true(真), false(假)
 
 // 模型切换模式
 live2d_settings['modelStorage']         = true;         // 记录 ID (刷新后恢复)，可选 true(真), false(假)
@@ -44,9 +49,9 @@ live2d_settings['modelRandMode']        = 'switch';     // 模型切换，可选
 live2d_settings['modelTexturesRandMode']= 'rand';       // 材质切换，可选 'rand'(随机), 'switch'(顺序)
 
 // 提示消息选项
-live2d_settings['showHitokoto']         = true;         // 显示一言
+live2d_settings['showHitokoto']         = false;         // 显示一言
 live2d_settings['showF12Status']        = true;         // 显示加载状态
-live2d_settings['showF12Message']       = false;        // 显示看板娘消息
+live2d_settings['showF12Message']       = true;        // 显示看板娘消息
 live2d_settings['showF12OpenMsg']       = true;         // 显示控制台打开提示
 live2d_settings['showCopyMessage']      = true;         // 显示 复制内容 提示
 live2d_settings['showWelcomeMessage']   = true;         // 显示进入面页欢迎词
@@ -64,13 +69,96 @@ live2d_settings['waifuDraggable']       = 'disable';    // 拖拽样式，例如
 live2d_settings['waifuDraggableRevert'] = true;         // 松开鼠标还原拖拽位置，可选 true(真), false(假)
 
 // 其他杂项设置
-live2d_settings['l2dVersion']           = '1.4.2';        // 当前版本
-live2d_settings['l2dVerDate']           = '2018.11.12'; // 版本更新日期
-live2d_settings['homePageUrl']          = 'auto';       // 主页地址，可选 'auto'(自动), '{URL 网址}'
-live2d_settings['aboutPageUrl']         = 'https://www.fghrsh.net/post/123.html';   // 关于页地址, '{URL 网址}'
-live2d_settings['screenshotCaptureName']= 'live2d.png'; // 看板娘截图文件名，例如 'live2d.png'
+live2d_settings['l2dVersion']           = '';        // 当前版本
+live2d_settings['l2dVerDate']           = ''; // 版本更新日期
+live2d_settings['homePageUrl']          = 'https://www.yqmaster.com';       // 主页地址，可选 'auto'(自动), '{URL 网址}'
+live2d_settings['aboutPageUrl']         = '';   // 关于页地址, '{URL 网址}'
+live2d_settings['screenshotCaptureName']= ''; // 看板娘截图文件名，例如 'live2d.png'
+
+live2d_settings['nowModelID']           = 0;
+live2d_settings['nowTexturesID']        = 0;
 
 /****************************************************************************************************/
+
+// Load static api configurations
+var staticAPI;
+$.getJSON(live2d_settings.staticAPIFile,function(result){
+    staticAPI = result;
+});
+
+function localAPI(action, modelID, texturesID=0){
+    //modelID = modelID>0 ? modelID-1 : 0;
+    //texturesID = texturesID>0 ? texturesID-1 : 0;
+    if(action === 'get'){
+        live2d_settings.nowModelID = modelID;
+        live2d_settings.nowTexturesID = texturesID;
+        if(staticAPI === undefined){
+            let blob = new Blob(
+                [live2d_settings.defaultModel], { type: 'Application/json' }
+            )  // type 的值为要创建的文件的MIME
+            return URL.createObjectURL( blob );
+        } else {
+            if(typeof staticAPI.model_list.models[modelID] === 'string'){
+                let json_pat = staticAPI.json_pattern[staticAPI.model_list.models[modelID]];
+                json_pat = json_pat.replace(/\"TEXTURES_REP\"/g, JSON.stringify(staticAPI.Textures[modelID][texturesID]));
+                
+                json_pat = json_pat.replace(/MODEL_HOME/g, live2d_settings['staticPath']);
+                let blob = new Blob(
+                    [json_pat], { type: 'Application/json' }
+                )  // type 的值为要创建的文件的MIME
+                return URL.createObjectURL( blob );
+            } else {
+                let model_name = staticAPI.model_list.models[modelID][texturesID];
+                let json_pat = staticAPI.json_pattern[model_name];
+                json_pat = json_pat.replace(/\"TEXTURES_REP\"/g, JSON.stringify(staticAPI.Textures[modelID][texturesID]));
+                json_pat = json_pat.replace(/MODEL_HOME/g, live2d_settings['staticPath']);
+                let blob = new Blob(
+                    [json_pat], { type: 'Application/json' }
+                )  // type 的值为要创建的文件的MIME
+                return URL.createObjectURL( blob );
+            }
+        }
+    } else if (action === 'randModel'){
+        let newModelID = Math.floor(Math.random()*(staticAPI.model_list.models.length));
+        while(newModelID === modelID && newModelID !== 0){
+            newModelID = Math.floor(Math.random()*(staticAPI.model_list.models.length));
+        }
+        loadModel(newModelID, 0);
+        showMessage(staticAPI.model_list.messages[newModelID], 3000, true);
+    } else if (action === 'switchModel'){
+        let newModelID = modelID+1;
+        if(newModelID >= staticAPI.model_list.models.length){
+            newModelID = 0;
+        }
+        loadModel(newModelID, 0);
+        showMessage(staticAPI.model_list.messages[newModelID], 3000, true);
+    } else if (action === 'randTextures'){
+        let totalTexturesNum;
+        if(typeof staticAPI.model_list.models[modelID] === 'string'){
+            totalTexturesNum = staticAPI.Textures[modelID].length;
+        } else {
+            totalTexturesNum = staticAPI.model_list.models[modelID].length;
+        }
+        let newTextureID = Math.floor(Math.random()*totalTexturesNum);
+        while(newTextureID === texturesID){
+            newTextureID = Math.floor(Math.random()*totalTexturesNum);
+        }
+        loadModel(modelID, newTextureID);
+    } else if (action === 'switchTextures'){
+        let totalTexturesNum;
+        if(typeof staticAPI.model_list.models[modelID] === 'string'){
+            totalTexturesNum = staticAPI.Textures[modelID].length;
+        } else {
+            totalTexturesNum = staticAPI.model_list.models[modelID].length;
+        }
+        let newTextureID = TexturesID + 1;
+        if(newTextureID >= totalTexturesNum && newTextureID !== 0){
+            newTextureID = 0;
+        }
+        loadModel(modelID, newTextureID);
+    }
+}
+
 
 String.prototype.render = function(context) {
     var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
@@ -151,7 +239,7 @@ function initModel(waifuPath, type) {
         else $(".waifu").css("transition", 'all .3s ease-in-out');
     } catch(err) { console.log('[Error] JQuery UI is not defined.') }
     
-    live2d_settings.homePageUrl = live2d_settings.homePageUrl == 'auto' ? window.location.protocol+'//'+window.location.hostname+'/' : live2d_settings.homePageUrl;
+    live2d_settings.homePageUrl == 'auto' ? window.location.protocol+'//'+window.location.hostname+'/' : live2d_settings.homePageUrl;
     if (window.location.protocol == 'file:' && live2d_settings.modelAPI.substr(0,2) == '//') live2d_settings.modelAPI = 'http:'+live2d_settings.modelAPI;
     
     $('.waifu-tool .fui-home').click(function (){
@@ -199,7 +287,8 @@ function loadModel(modelId, modelTexturesId=0) {
     } else {
         sessionStorage.setItem('modelId', modelId);
         sessionStorage.setItem('modelTexturesId', modelTexturesId);
-    } loadlive2d('live2d', live2d_settings.modelAPI+'get/?id='+modelId+'-'+modelTexturesId, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
+    //} loadlive2d('live2d', live2d_settings.modelAPI+'get/?id='+modelId+'-'+modelTexturesId, (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
+    } loadlive2d('live2d', localAPI('get', modelId, modelTexturesId), (live2d_settings.showF12Status ? console.log('[Status]','live2d','模型',modelId+'-'+modelTexturesId,'加载完成'):null));
 }
 
 function loadTipsMessage(result) {
@@ -261,14 +350,14 @@ function loadTipsMessage(result) {
         var text;
         if (window.location.href == live2d_settings.homePageUrl) {
             var now = (new Date()).getHours();
-            if (now > 23 || now <= 5) text = getRandText(result.waifu.hour_tips['t23-5']);
-            else if (now > 5 && now <= 7) text = getRandText(result.waifu.hour_tips['t5-7']);
-            else if (now > 7 && now <= 11) text = getRandText(result.waifu.hour_tips['t7-11']);
-            else if (now > 11 && now <= 14) text = getRandText(result.waifu.hour_tips['t11-14']);
-            else if (now > 14 && now <= 17) text = getRandText(result.waifu.hour_tips['t14-17']);
-            else if (now > 17 && now <= 19) text = getRandText(result.waifu.hour_tips['t17-19']);
-            else if (now > 19 && now <= 21) text = getRandText(result.waifu.hour_tips['t19-21']);
-            else if (now > 21 && now <= 23) text = getRandText(result.waifu.hour_tips['t21-23']);
+            if (now > 23 || now <= 5) text = getRandText(result.waifu.hour_tips.t23-5);
+            else if (now > 5 && now <= 7) text = getRandText(result.waifu.hour_tips.t5-7);
+            else if (now > 7 && now <= 11) text = getRandText(result.waifu.hour_tips.t7-11);
+            else if (now > 11 && now <= 14) text = getRandText(result.waifu.hour_tips.t11-14);
+            else if (now > 14 && now <= 17) text = getRandText(result.waifu.hour_tips.t14-17);
+            else if (now > 17 && now <= 19) text = getRandText(result.waifu.hour_tips.t17-19);
+            else if (now > 19 && now <= 21) text = getRandText(result.waifu.hour_tips.t19-21);
+            else if (now > 21 && now <= 23) text = getRandText(result.waifu.hour_tips.t21-23);
             else text = getRandText(result.waifu.hour_tips.default);
         } else {
             var referrer_message = result.waifu.referrer_message;
@@ -296,10 +385,10 @@ function loadTipsMessage(result) {
     var waifu_tips = result.waifu;
     
     function loadOtherModel() {
-        var modelId = modelStorageGetItem('modelId');
+        /*var modelId = modelStorageGetItem('modelId');
         var modelRandMode = live2d_settings.modelRandMode;
         
-        $.ajax({
+        /*$.ajax({
             cache: modelRandMode == 'switch' ? true : false,
             url: live2d_settings.modelAPI+modelRandMode+'/?id='+modelId,
             dataType: "json",
@@ -309,15 +398,16 @@ function loadTipsMessage(result) {
                 $.each(waifu_tips.model_message, function(i,val) {if (i==result.model['id']) message = getRandText(val)});
                 showMessage(message, 3000, true);
             }
-        });
+        });*/
+        localAPI(live2d_settings.modelRandMode+'Model', live2d_settings.nowModelID);
     }
     
     function loadRandTextures() {
-        var modelId = modelStorageGetItem('modelId');
+        /*var modelId = modelStorageGetItem('modelId');
         var modelTexturesId = modelStorageGetItem('modelTexturesId');
         var modelTexturesRandMode = live2d_settings.modelTexturesRandMode;
         
-        $.ajax({
+        /*$.ajax({
             cache: modelTexturesRandMode == 'switch' ? true : false,
             url: live2d_settings.modelAPI+modelTexturesRandMode+'_textures/?id='+modelId+'-'+modelTexturesId,
             dataType: "json",
@@ -327,7 +417,8 @@ function loadTipsMessage(result) {
                 else showMessage(waifu_tips.load_rand_textures[1], 3000, true);
                 loadModel(modelId, result.textures['id']);
             }
-        });
+        });*/
+        localAPI(live2d_settings.modelTexturesRandMode+'Textures', live2d_settings.nowModelID, live2d_settings.nowTexturesID);
     }
     
     function modelStorageGetItem(key) { return live2d_settings.modelStorage ? localStorage.getItem(key) : sessionStorage.getItem(key); }
