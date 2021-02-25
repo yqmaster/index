@@ -276,34 +276,27 @@ html {
 
 .toolsboxs:hover {
     opacity: 0;
-    border-radius: 30px;
-}
-
-.toolsboxtext {
-    position: absolute;
-    width: 300px;
-    height: 180px;
-    top: 15px;
-    left: 30px;
+    border-radius: 3vw;
 }
 
 .toolsboxtitle {
-    line-height: 70px;
+    line-height: 7vw;
     color: white;
-    font-size: 45px;
+    font-size: 4vw;
     font-weight: normal;
-    letter-spacing: 4px;
+    letter-spacing: 0.5vw;
+    margin: 2vw 3vw 0vw;
 }
 
 .toolsboxcontent {
-    width: 240px;
-    height: 100px;
-    margin-top: 5px;
-    line-height: 30px;
+    width: 25vw;
+    height: 15vw;
+    margin-left: 3vw;
+    line-height: 4.2vw;
     color: rgb(235, 235, 235);
-    font-size: 22px;
+    font-size: 3vw;
     font-weight: lighter;
-    letter-spacing: 2px;
+    letter-spacing: 0.3vw;
 }
 
 .toolsboxpic {
