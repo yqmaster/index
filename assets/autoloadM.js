@@ -18,12 +18,12 @@ try {
                     /* 可直接修改部分参数 */
 
                     //看板娘样式设置
-                    live2d_settings['waifuSize'] = '350x400'; // 看板娘大小，例如 '280x250', '600x535'
-                    live2d_settings['waifuTipsSize'] = '250x100'; // 提示框大小，例如 '250x70', '570x150'
-                    live2d_settings['waifuFontSize'] = '25px'; // 提示框字体，例如 '12px', '30px'
-                    live2d_settings['waifuToolFont'] = '40px'; // 工具栏字体，例如 '14px', '36px'
-                    live2d_settings['waifuToolLine'] = '60px'; // 工具栏行高，例如 '20px', '36px'
-                    live2d_settings['waifuToolTop'] = '0px' // 工具栏顶部边距，例如 '0px', '-60px'
+                    live2d_settings['waifuSize'] = '200x250'; // 看板娘大小，例如 '280x250', '600x535'
+                    live2d_settings['waifuTipsSize'] = '160x60'; // 提示框大小，例如 '250x70', '570x150'
+                    live2d_settings['waifuFontSize'] = '16px'; // 提示框字体，例如 '12px', '30px'
+                    live2d_settings['waifuToolFont'] = '25px'; // 工具栏字体，例如 '14px', '36px'
+                    live2d_settings['waifuToolLine'] = '40px'; // 工具栏行高，例如 '20px', '36px'
+                    live2d_settings['waifuToolTop'] = '10px' // 提示框顶部边距，例如 '0px', '-60px'
                     live2d_settings['waifuMinWidth'] = 'disable'; // 面页小于 指定宽度 隐藏看板娘，例如 'disable'(禁用), '768px'
                     live2d_settings['waifuEdgeSide'] = 'right:0'; // 看板娘贴边方向，例如 'left:0'(靠左 0px), 'right:30'(靠右 30px)
                     live2d_settings['waifuDraggable'] = 'disable'; // 拖拽样式，例如 'disable'(禁用), 'axis-x'(只能水平拖拽), 'unlimited'(自由拖拽)
