@@ -310,18 +310,11 @@ html {
     border-radius: 10px;
 }
 
-.toolsboxtext {
-    position: absolute;
-    width: 240px;
-    height: 150px;
-    top: 15px;
-    left: 30px;
-}
-
 .toolsboxtitle {
+    margin:10px 20px 5px;
     line-height: 30px;
     color: white;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: normal;
     letter-spacing: 4px;
 }
@@ -329,10 +322,11 @@ html {
 .toolsboxcontent {
     width: 160px;
     height: 100px;
+    margin:5px 20px;
     margin-top: 5px;
     line-height: 20px;
     color: rgb(235, 235, 235);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: lighter;
     letter-spacing: 1px;
 }
