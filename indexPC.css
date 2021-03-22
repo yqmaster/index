@@ -58,7 +58,7 @@ html {
 
 .titletext {
     font-size: 30px;
-    font-weight:600;
+    font-weight: 600;
     color: rgb(61, 61, 61);
     line-height: 60px;
     letter-spacing: 2vw;
@@ -311,7 +311,7 @@ html {
 }
 
 .toolsboxtitle {
-    margin:10px 20px 5px;
+    margin: 13px 20px 8px;
     line-height: 30px;
     color: white;
     font-size: 25px;
@@ -322,7 +322,7 @@ html {
 .toolsboxcontent {
     width: 160px;
     height: 100px;
-    margin:5px 20px;
+    margin: 5px 20px;
     margin-top: 5px;
     line-height: 20px;
     color: rgb(235, 235, 235);
@@ -376,4 +376,11 @@ html {
             rgba(255, 162, 193, 0.8)20%,
             rgba(255, 162, 193, 0.9)50%,
             rgb(255, 162, 193)70%);
+}
+
+#toolsbox6 {
+    background-image: linear-gradient(-30deg,
+            rgba(255, 162, 162, 0.8)20%,
+            rgba(255, 162, 162, 0.9)50%,
+            rgb(255, 162, 162)70%);
 }
