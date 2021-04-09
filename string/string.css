@@ -1,0 +1,134 @@
+html {
+    background-color: #fafafa;
+}
+
+.toast-center-center {
+    top: 80%;
+    left: 0%;
+}
+
+#toast-container {
+    position: fixed;
+    z-index: 999999;
+    pointer-events: none
+}
+
+#toast-container>div {
+    position: relative;
+    pointer-events: auto;
+    overflow: hidden;
+    padding: 30px 15px 30px 50px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    width: 240px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -5px rgb(114, 114, 114);
+    color: #fafafa;
+    opacity: 1;
+}
+
+.toast-success {
+    background-color: #D1A3FD
+}
+
+.toast-warning {
+    background-color: #F89406
+}
+
+h1 {
+    letter-spacing: 8px;
+    font-weight: 500;
+}
+
+.row {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.forms {
+    outline: none;
+    border: none;
+    width: 60vw;
+    max-width: 800px;
+    height: 200px;
+    resize: vertical;
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 0 8px -3px #D1A3FD;
+    transition: all 0.2s;
+    font-size: 18px;
+    color: rgb(41, 41, 41);
+    letter-spacing: 2px;
+}
+
+textarea::-webkit-input-placeholder {
+    color: rgb(109, 109, 109);
+
+}
+
+.forms:hover {
+    box-shadow: 0 0 20px -6px #D1A3FD;
+}
+
+.forms:focus {
+    box-shadow: 0 2px 25px -10px #aa4fff;
+}
+
+#row2 {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    position: relative;
+    margin: 0 50px;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.chosenline {
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    width: 30px;
+    height: 6px;
+    background: #555;
+    border-radius: 3px;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+    appearance: none;
+    position: absolute;
+    left: -55px;
+    width: 20px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 10px;
+    transition: all 0.3s;
+    outline: none
+}
+
+input[type=checkbox]:checked {
+    transform: translateX(30px);
+}
+
+.btn {
+    outline: none;
+    padding: 10px 30px;
+    background-color: #D1A3FD;
+    border: none;
+    font-size: 20px;
+    letter-spacing: 5px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px -6px #D1A3FD;
+    color: rgb(41, 41, 41);
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background-color: #e3c5ff;
+    cursor: pointer;
+    box-shadow: 0 0 25px -6px #c689ff;
+}

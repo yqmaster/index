@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文本去空格</title>
+    <link rel="bookmark" href=".ico" />
+
+    <script type="text/javascript">
+        if (/Android|webOS| iPhone | iPad | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(
+            navigator.userAgent)) {
+                alert("请使用PC端浏览哦~");
+                window.open("https://www.yqmaster.com");
+                var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'string.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = '../assets/waifuPC.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "../assets/autoloadPC.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
+        } else {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = 'string.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = '../assets/waifuPC.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+
+            var script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", "../assets/autoloadPC.js");
+            var heads = document.getElementsByTagName("body");
+            document.documentElement.appendChild(script);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <br>
+        <h1>文本去空格</h1>
+    </div>
+    <div class="row">
+        <textarea class="forms" id="content" placeholder="请在这里输入需要处理的字符串"></textarea>
+    </div>
+
+    <div class="row" id="row2">
+        <label>
+            <div class="chosenline"></div>
+            <input type="checkbox" name="check" checked="checked" value="1" data-toggle="tooltip"
+                data-original-title="去掉字符串中的空格">去空格
+        </label>
+        <label>
+            <div class="chosenline"></div>
+            <input type="checkbox" name="check" checked="checked" value="2" data-toggle="tooltip"
+                data-original-title="去掉字符串中的制表符">去制表符
+        </label>
+        <label>
+            <div class="chosenline"></div>
+            <input type="checkbox" name="check" checked="checked" value="3" data-toggle="tooltip"
+                data-original-title="去掉字符串中的换行回车">去回车
+        </label>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn " id="btn1" style="margin:5px;">开始去除</button>
+            <button type="submit" class="btn " id="copy" data-clipboard-target="#shuchu"
+                style="margin:5px;">复制结果</button>
+            <button type="submit" class="btn " id="btn2" style="margin:5px;">导出文本</button>
+            <button type="submit" class="btn " id="btn3" style="margin:5px;">清空结果</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <textarea class="forms" id="shuchu" placeholder="处理结果显示处"></textarea>
+
+    </div>
+
+    <a onfocus="this.blur();" download="在线字符串去空格结果导出.txt" id="createInvote" class="ipt-todo hide"></a>
+
+
+
+
+
+    <script src="jquery.min.js"></script>
+    <script src="toastr.min.js"></script>
+    <script
+        type="text/javascript">$(function () { $("[data-toggle='tooltip']").tooltip(); }); toastr.options.positionClass = 'toast-center-center';</script>
+    <script src="clipboard.min.js"></script>
+    <script type="text/javascript">
+        function Trim(str) {
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+        //判断是否为空函数
+        function isEmpty(obj) {
+            if (typeof obj == "undefined" || obj == null || obj == "") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //初始化警告框 指定位置
+        $("#btn1").bind("click",
+            function () {
+                //清空输入从新开始
+                document.getElementById('shuchu').value = "";
+                var inputcontent = document.getElementById('content').value;
+
+                if ($('input[type=checkbox]:checked').length == 0) {
+                    toastr.error("请选择需要去掉的空格,或者回车,或者制表符");
+                    return;
+                }
+                $.each($('input:checkbox'), function () {
+                    if (this.checked) {
+                        if ($(this).val() == "1") {
+                            inputcontent = inputcontent.replace(/[ ]/g, "");
+                        }
+                        else if ($(this).val() == "2") {
+                            inputcontent = inputcontent.replace(/\t/ig, "");
+                        }
+                        else if ($(this).val() == "3") {
+                            inputcontent = inputcontent.replace(/\r/ig, "");
+                            inputcontent = inputcontent.replace(/\n/ig, "");
+                        } else {
+                            toastr.error("不支持的选项");
+                        }
+                    }
+                });
+                document.getElementById('shuchu').value = inputcontent;
+                return false
+            });
+
+        $("#btn2").bind("click",
+            function () {
+                var daochu = document.getElementById('shuchu').value;
+                if (isEmpty(daochu)) {
+                    toastr.warning("没有内容,无法导出");
+                    return false
+                }
+                var isIE = (navigator.userAgent.indexOf('MSIE') >= 0);
+                if (isIE) {
+                    var winSave = window.open();
+                    winSave.document.open("text", "utf-8");
+                    winSave.document.write(daochu);
+                    winSave.document.execCommand("SaveAs", true, "bugscaner.txt");
+                    winSave.close();
+                } else {
+                    var mimeType = 'text/plain';
+                    $('#createInvote').attr('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(daochu));
+                    document.getElementById('createInvote').click();
+                }
+                return false
+            });
+        $("#btn3").bind("click",
+            function () {
+                document.getElementById('content').value = '';
+                document.getElementById('shuchu').value = '';
+                document.getElementById('content').select();
+                return false
+            });
+
+        //之前的复制插件过时了,需要flash,更换成这个
+        var clipboard = new ClipboardJS('#copy');
+        clipboard.on('success', function (e) {
+            if (e.text != "") {
+                toastr.success("复制成功");
+            }
+            else {
+                toastr.success("还未去除");
+            }
+        });
+
+        clipboard.on('error', function (e) {
+            toastr.success("复制失败");
+        });
+    </script>
+
+</body>
+
+</html>
