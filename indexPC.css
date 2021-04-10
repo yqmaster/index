@@ -11,6 +11,8 @@
     font-weight: normal;
 }
 
+
+
 .icon {
     width: 1em;
     height: 1em;
@@ -26,7 +28,12 @@ a {
 }
 
 html {
+    background-image: url(https://api.paugram.com/wallpaper?source=gt);
     background-color: #fafafa;
+    background-position: left top;
+
+    background-attachment: fixed;
+    background-blend-mode: overlay;
 }
 
 .welcomebox {
